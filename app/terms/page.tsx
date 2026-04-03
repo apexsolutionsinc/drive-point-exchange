@@ -1,0 +1,151 @@
+'use client';
+
+import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
+import { useI18n } from '../../lib/i18n/context';
+
+interface TermsSection {
+  title: string;
+  content: string;
+}
+
+export default function TermsPage() {
+  const prefersReducedMotion = useReducedMotion();
+  const { t, ts } = useI18n();
+
+  const fadeInUp = prefersReducedMotion
+    ? { initial: {}, animate: {}, transition: { duration: 0 } }
+    : { initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 } };
+
+  const staggerChildren = prefersReducedMotion
+    ? { animate: {} }
+    : { animate: { transition: { staggerChildren: 0.1 } } };
+  const termsSections = (t('terms.sections') as TermsSection[]).map((section: TermsSection, index: number) => ({
+    ...section,
+    id: index + 1
+  }));
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[#1a2744] via-[#1a2744] to-blue-600 py-20">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
+          >
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+            >
+              {ts('terms.title')}
+            </motion.h1>
+            <motion.p 
+              variants={fadeInUp}
+              className="text-xl text-blue-100 max-w-2xl mx-auto"
+            >
+              {ts('terms.subtitle')}
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Terms Content */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="space-y-8"
+          >
+            {termsSections.map((section) => (
+              <motion.div
+                key={section.id}
+                variants={fadeInUp}
+                className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-apex-navy rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">{section.id}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {section.title}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed">
+                      {section.content}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="text-center"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="bg-gradient-to-r from-[#1a2744] to-blue-600 rounded-2xl p-8 text-white"
+            >
+              <h2 className="text-3xl font-bold mb-4">{ts('terms.contact.title')}</h2>
+              <p className="text-xl mb-6">
+                {ts('terms.contact.subtitle')}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <p className="font-semibold">{ts('terms.contact.email')}</p>
+                  <a href="mailto:support@apexautosolutionsinc.com" className="text-blue-100 hover:text-white transition-colors">support@apexautosolutionsinc.com</a>
+                </div>
+                <div>
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <p className="font-semibold">{ts('terms.contact.phone')}</p>
+                  <a href="tel:+18889907112" className="text-blue-100 hover:text-white transition-colors">(888) 990-7112</a>
+                </div>
+                <div>
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                    </svg>
+                  </div>
+                  <p className="font-semibold">{ts('terms.contact.website')}</p>
+                  <p className="text-blue-100">www.apexautosolutions.com</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+}

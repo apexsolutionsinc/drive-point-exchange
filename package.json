@@ -1,0 +1,43 @@
+{
+  "name": "apex-auto",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "create-admin": "node scripts/create-admin-user.js",
+    "list-admins": "node scripts/create-admin-user.js list"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.76.1",
+    "@types/nodemailer": "^7.0.2",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "framer-motion": "^12.23.24",
+    "next": "16.0.10",
+    "next-intl": "^4.4.0",
+    "nodemailer": "^7.0.9",
+    "playwright": "^1.58.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "resend": "^6.6.0",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@google/genai": "^1.46.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.10.9",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

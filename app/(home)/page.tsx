@@ -1,0 +1,388 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import Navigation from '../../components/Navigation';
+import LoanCalculator from '../../components/LoanCalculator';
+import Footer from '../../components/Footer';
+import { useI18n } from '../../lib/i18n/context';
+import TrustpilotReviews from '../../components/TrustpilotReviews';
+import SocialFeed from '../../components/SocialFeed';
+import { LightningBg } from '../../components/ui/lightning-bg';
+import { HyperText } from '../../components/ui/hyper-text';
+
+const heroTerms = ['Lower Rates', 'Flexible Terms', 'Fast Approval'];
+
+export default function Home() {
+  const { ts } = useI18n();
+  const prefersReducedMotion = useReducedMotion();
+
+  const fadeInUp = prefersReducedMotion
+    ? { initial: {}, animate: {}, transition: { duration: 0 } }
+    : { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 }, transition: { type: "spring", stiffness: 100, damping: 15 } };
+
+  const fadeInRight = prefersReducedMotion
+    ? { initial: {}, animate: {}, transition: { duration: 0 } }
+    : { initial: { opacity: 0, x: 40 }, animate: { opacity: 1, x: 0 }, transition: { type: "spring", stiffness: 100, damping: 15 } };
+
+  const staggerChildren = prefersReducedMotion
+    ? { animate: {} }
+    : { animate: { transition: { staggerChildren: 0.12 } } };
+  const [currentTerm, setCurrentTerm] = useState(0);
+
+  useEffect(() => {
+    const animationDuration = 400;
+    const staticHold = 3000;
+    const interval = setInterval(() => {
+      setCurrentTerm((prev) => (prev + 1) % heroTerms.length);
+    }, animationDuration + staticHold);
+    return () => clearInterval(interval);
+  }, []);
+
+  const services = [
+    {
+      title: ts('home.services.autoRefinance.title'),
+      description: ts('home.services.autoRefinance.description'),
+      image: "/auto/svc-auto-refinance.jpg",
+      href: "/services",
+      category: "Auto Refinance",
+      span: "md:col-span-2 md:row-span-2",
+    },
+    {
+      title: ts('home.services.vehicleCoverage.title'),
+      description: ts('home.services.vehicleCoverage.description'),
+      image: "/auto/svc-vehicle-coverage.jpg",
+      href: "/services",
+      category: "Coverage & Protection",
+      span: "md:row-span-2",
+    },
+    {
+      title: ts('home.services.homeRefinance.title'),
+      description: ts('home.services.homeRefinance.description'),
+      image: "/auto/svc-home-refinance.jpg",
+      href: "/services",
+      category: "Home Loans",
+      span: "md:col-span-2 md:row-span-2",
+    },
+    {
+      title: ts('home.services.insuranceConsultation.title'),
+      description: ts('home.services.insuranceConsultation.description'),
+      image: "/auto/svc-auto-insurance.jpg",
+      href: "/services",
+      category: "Consulting",
+      span: "md:row-span-2",
+    },
+    {
+      title: ts('home.services.lifeInsurance.title'),
+      description: ts('home.services.lifeInsurance.description'),
+      image: "/auto/svc-life-insurance.jpg",
+      href: "/services",
+      category: "Consulting",
+      span: "",
+    },
+    {
+      title: ts('home.services.creditSavings.title'),
+      description: ts('home.services.creditSavings.description'),
+      image: "/auto/svc-credit-consultations.jpg",
+      href: "/services",
+      category: "Financial",
+      span: "md:col-span-2",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#f8fafc]">
+      <Navigation overlay />
+
+      {/* ─── HERO ─── full viewport, nav overlays */}
+      <section className="relative h-screen flex items-center overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image src="/auto/car-hero.jpg" alt="" fill sizes="100vw" className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/85 via-[#102a4a]/50 to-transparent" />
+        </div>
+
+        {/* Red lightning — subtle ambient across hero */}
+        <div className="absolute inset-0 z-[2] mix-blend-screen pointer-events-none animate-lightning-red">
+          <LightningBg hue={0} xOffset={0.3} intensity={0.15} speed={0.6} size={3} />
+        </div>
+
+        {/* Blue lightning — right column, matches apex-blue #3b82f6 (hue 217) */}
+        <div className="absolute top-0 right-0 bottom-0 w-1/2 z-[4] mix-blend-screen pointer-events-none opacity-90">
+          <LightningBg hue={217} xOffset={0} intensity={0.8} speed={0.35} size={3.5} />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — Text */}
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={staggerChildren}
+              className="space-y-8"
+            >
+              <motion.div variants={fadeInUp}>
+                <p className="text-xs tracking-[0.25em] uppercase text-gray-300 font-medium mb-6">
+                  Nationwide Coverage
+                </p>
+                <h1 className="font-saira !text-5xl md:!text-6xl lg:!text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+                  {ts('home.hero.title')}
+                </h1>
+
+                {/* Rotating term — plain fade on mobile, scramble on desktop */}
+                <div className="h-12 flex items-center mb-3">
+                  <span className="md:hidden !text-xl font-saira font-bold text-white tracking-wide">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={heroTerms[currentTerm]}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {heroTerms[currentTerm]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
+                  <span className="hidden md:block">
+                    <HyperText
+                      key={heroTerms[currentTerm]}
+                      text={heroTerms[currentTerm]}
+                      duration={400}
+                      className="!text-2xl font-saira font-bold text-white tracking-wide"
+                    />
+                  </span>
+                </div>
+                <p className="!text-lg md:!text-xl text-gray-300 leading-relaxed max-w-lg">
+                  Your journey to financial freedom starts here.
+                </p>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="bg-apex-red hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center shadow-lg shadow-red-900/30"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/services"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center border border-white/15"
+                >
+                  {ts('home.hero.learnMore')}
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right — Calculator */}
+            <motion.div
+              variants={fadeInRight}
+              initial="initial"
+              animate="animate"
+              className="relative hidden lg:block"
+            >
+              <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 p-6">
+                <LoanCalculator />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES BENTO GRID ─── */}
+      <section className="py-24 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="text-center mb-12"
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-apex-red/20 bg-apex-red/5 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-apex-red" />
+              <span className="text-sm font-medium text-apex-red">Our Services</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900">
+              {ts('home.services.title')}
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="grid grid-cols-1 md:grid-cols-3 auto-rows-[280px] md:auto-rows-[240px] gap-3"
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className={`relative overflow-hidden rounded-xl group cursor-pointer ${service.span}`}
+              >
+                <Link href={service.href} className="absolute inset-0 z-10" aria-label={service.title} />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes={service.span.includes('md:col-span-2') ? '(min-width: 768px) 66vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
+                  className="object-cover transition-all duration-500"
+                />
+                {/* Hover glow ring */}
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-inset ring-white/20 shadow-[inset_0_0_30px_rgba(59,130,246,0.15)]" />
+                {/* Darken overlay on hover for text contrast */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500" />
+                {/* Bottom gradient for text readability */}
+                <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-widest text-apex-red mb-1">
+                    {service.category}
+                  </span>
+                  <h3 className="font-saira text-sm md:text-base lg:text-lg font-bold text-white uppercase tracking-wide mb-0.5">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/90 text-xs leading-relaxed line-clamp-1 max-w-sm mb-2">
+                    {service.description}
+                  </p>
+                  <div className="border-t border-white/15 pt-2">
+                    <span className="text-apex-red font-semibold text-xs inline-flex items-center gap-1.5 uppercase tracking-wider group-hover:gap-2.5 transition-all duration-200">
+                      {ts('home.services.learnMore')}
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── TRUST ─── */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="text-center mb-12"
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-slate-200 bg-slate-50 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-apex-blue" />
+              <span className="text-sm font-medium text-apex-slate">Trusted Nationwide</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              {ts('home.trust.title')}
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-lg text-gray-500">
+              {ts('home.trust.subtitle')}
+            </motion.p>
+          </motion.div>
+
+          {/* Trustpilot Reviews */}
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <TrustpilotReviews />
+          </motion.div>
+
+          {/* Forbes Recognition */}
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center px-4 sm:px-6"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+              <Image
+                src="/auto/forbes.png"
+                alt="As seen in Forbes"
+                width={500}
+                height={150}
+                className="opacity-70 hover:opacity-100 transition-opacity duration-300 w-full max-w-[250px] md:max-w-lg md:flex-1"
+              />
+              <Image
+                src="/auto/Forbes-Logo-1999-present.png"
+                alt="Featured in Forbes"
+                width={500}
+                height={150}
+                className="opacity-70 hover:opacity-100 transition-opacity duration-300 w-full max-w-[250px] md:max-w-lg md:flex-1"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <SocialFeed />
+
+      {/* ─── CTA ─── */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-apex-red/20 bg-apex-red/5 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-apex-red animate-pulse" />
+              <span className="text-sm font-medium text-apex-red">Get Started Today</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              {ts('home.cta.title')}
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+              {ts('home.cta.subtitle')}
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Link
+                href="/contact"
+                className="text-center bg-apex-red hover:bg-red-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-red-900/15 transition-all duration-200"
+              >
+                {ts('home.cta.getStarted')}
+              </Link>
+              <Link
+                href="/services"
+                className="text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-200"
+              >
+                {ts('home.cta.learnMore')}
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 bg-[#f8fafc] border border-gray-100 rounded-2xl px-8 py-6"
+            >
+              <div className="text-center sm:text-left">
+                <p className="text-sm text-gray-400 mb-1">Main Office</p>
+                <a href="tel:+18889907112" className="text-xl font-bold text-gray-900 hover:text-apex-red transition-colors">
+                  (888) 990-7112
+                </a>
+              </div>
+              <div className="hidden sm:block w-px h-10 bg-gray-200" />
+              <div className="text-center sm:text-left">
+                <p className="text-sm text-gray-400 mb-1">Customer Support — 24/7</p>
+                <a href="tel:+17737821005" className="text-xl font-bold text-gray-900 hover:text-apex-red transition-colors">
+                  (773) 782-1005
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/dev/Apex/apex-auto/lib/social)",
+      "Bash(mkdir -p /c/dev/Apex/apex-auto/components/social)",
+      "Bash(git stash:*)",
+      "Bash(find /c/dev/Apex/apex-auto/public -type f \\\\\\(-iname *.png -o -iname *.jpg -o -iname *.jpeg -o -iname *.gif -o -iname *.svg -o -iname *.webp \\\\\\))",
+      "Bash(find /c/dev/Apex/apex-auto -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js -o -name *.json \\\\\\) ! -path */node_modules/* ! -path */.next/*)",
+      "Bash(mv \"car \\(4\\).jpg\" \"car4.jpg\")",
+      "Bash(mv \"car \\(5\\).jpg\" \"car5.jpg\")",
+      "Bash(mv \"car \\(6\\).jpg\" \"car6.jpg\")",
+      "Bash(mv \"car \\(7\\).jpg\" \"car7.jpg\")",
+      "Bash(mv \"car \\(8\\).jpg\" \"car8.jpg\")",
+      "Bash(git add:*)",
+      "Bash(find /c/dev/Apex/apex-auto/components -type f \\\\\\(-name *.tsx -o -name *.ts \\\\\\))",
+      "Bash(npx next:*)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

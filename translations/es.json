@@ -1,0 +1,677 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "benefits": "Beneficios",
+    "contact": "Contacto",
+    "calculators": "Calculadoras",
+    "autoLoanCalculator": "Calculadora de Refinanciamiento de Auto",
+    "homeLoanCalculator": "Calculadora de Préstamo de Casa",
+    "language": "Idioma"
+  },
+  "home": {
+    "hero": {
+      "title": "Conduce Hacia el Éxito Financiero",
+      "subtitle": "Tasas más bajas, términos flexibles, aprobación rápida. Tu viaje hacia la libertad financiera comienza aquí.",
+      "quickApproval": "Aprobación Rápida",
+      "quickApprovalDesc": "Obtén pre-aprobación en minutos, no días",
+      "competitiveRates": "Tasas Competitivas",
+      "competitiveRatesDesc": "Ahorra miles con nuestras bajas tasas de interés",
+      "trustedService": "Servicio de Confianza",
+      "trustedServiceDesc": "Más de 12 años ayudando a clientes a tener éxito",
+      "learnMore": "Saber Más"
+    },
+    "services": {
+      "title": "Soluciones Financieras Integrales",
+      "subtitle": "No solo estamos aquí para ahorrarte dinero — estamos aquí para educarte. Desde entender lo que realmente incluye tu cobertura hasta reducir tus tasas, te ayudamos a tomar decisiones financieras informadas.",
+      "autoRefinance": {
+        "title": "Refinanciamiento de Préstamo de Auto",
+        "description": "Aprovecha tasas de interés más bajas y términos flexibles refinanciando tu préstamo de auto con Apex Auto Solutions Inc."
+      },
+      "vehicleCoverage": {
+        "title": "Cobertura y Certificaciones de Vehículo",
+        "description": "Muchos conductores están pagando por cobertura que realmente no protege su vehículo. Te ayudamos a entender lo que realmente dice tu documentación y a obtener cobertura verdadera y verificada con tranquilidad real."
+      },
+      "homeRefinance": {
+        "title": "Refinanciamiento de Casa",
+        "description": "Explora opciones para refinanciar tu casa para reducir pagos mensuales, bajar tasas de interés o acceder al capital."
+      },
+      "insuranceConsultation": {
+        "title": "Seguro de Auto",
+        "description": "Navega las complejidades del seguro de auto y encuentra cobertura que se adapte a tus necesidades y presupuesto."
+      },
+      "lifeInsurance": {
+        "title": "Seguro de Vida",
+        "description": "Asegura el futuro financiero de tu familia con soluciones de seguro de vida asequibles adaptadas a tus necesidades y circunstancias únicas."
+      },
+      "creditSavings": {
+        "title": "Consultas de Crédito",
+        "description": "Toma el control de tu salud financiera con estrategias expertas de mejora de crédito y consultas personalizadas diseñadas para construir riqueza duradera."
+      },
+      "learnMore": "Aprender Más"
+    },
+    "trust": {
+      "title": "Cobertura Nacional de Confianza",
+      "subtitle": "Liderando el camino en soluciones financieras automotrices"
+    },
+    "cta": {
+      "title": "¿Listo para Tomar Control de Tus Finanzas?",
+      "subtitle": "Únete a la familia de Apex Auto Solutions Inc. hoy y asegura un futuro financiero más brillante.",
+      "getStarted": "Comienza Hoy",
+      "learnMore": "Saber Más"
+    }
+  },
+  "calculator": {
+    "title": "Calcula Tu Pago",
+    "subtitle": "Obtén una estimación instantánea para tu préstamo de auto",
+    "loanDetails": "Detalles del Préstamo",
+    "paymentBreakdown": "Desglose de Pago",
+    "vehiclePrice": "Precio del Vehículo",
+    "downPayment": "Pago Inicial",
+    "creditScore": "Puntaje de Crédito",
+    "state": "Estado",
+    "vehicleType": "Tipo de Vehículo",
+    "vehicleYear": "Año del Vehículo",
+    "vehicleCategory": "Categoría del Vehículo",
+    "interestRate": "Tasa de Interés",
+    "loanTerm": "Plazo del Préstamo",
+    "estimatedMonthlyPayment": "Pago Mensual Estimado",
+    "vehiclePriceLabel": "Precio del Vehículo",
+    "salesTax": "Impuesto de Venta",
+    "downPaymentLabel": "Pago Inicial",
+    "totalFinanced": "Total Financiado",
+    "totalInterest": "Interés Total",
+    "totalCost": "Costo Total",
+    "refinanceTitle": "Calculadora de Refinanciamiento de Préstamo de Auto",
+    "refinanceSubtitle": "Compara tu préstamo actual con nuestras ofertas de refinanciamiento",
+    "currentLoanSection": "Préstamo Actual",
+    "balanceLeft": "Saldo Restante del Préstamo",
+    "currentMonthlyPayment": "Pago Mensual Actual",
+    "currentApr": "Tasa de Porcentaje Anual Actual",
+    "currentTermYears": "Plazo Actual",
+    "remainingTermYears": "Plazo Restante",
+    "originalLoanTermYears": "Plazo Original del Préstamo",
+    "newOfferSection": "Nueva Oferta",
+    "newApr": "Nueva Tasa de Porcentaje Anual",
+    "newTermYears": "Nuevo Plazo",
+    "newMonthlyPayment": "Nuevo Pago Mensual",
+    "savingsSection": "Tus Ahorros",
+    "monthlySavings": "Ahorros Mensuales",
+    "differenceInInterest": "Ahorros de Interés",
+    "differenceInInterestHelp": "Positivo = ahorro, Negativo = pago mayor",
+    "interestSavings": "Ahorros de Interés",
+    "interestSavingsHelp": "Ahorros totales de interés durante la vida del préstamo",
+    "monthlyPaymentWarning": "Pagarás más por mes con estos datos.",
+    "getQuote": "Obtener Mi Cotización de Refinanciamiento",
+    "resetCalculator": "Reiniciar Calculadora",
+    "yearOptions": {
+      "1": "1 Año",
+      "2": "2 Años",
+      "3": "3 Años",
+      "4": "4 Años",
+      "5": "5 Años",
+      "6": "6 Años",
+      "7": "7 Años"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Ponte en contacto con nuestro equipo para asistencia personalizada y consejos expertos. Estamos aquí para ayudarte a lograr tus objetivos financieros.",
+    "calculatePayment": "Calcula Tu Pago",
+    "viewServices": "Ver Nuestros Servicios",
+    "sendMessage": "Envíanos un Mensaje",
+    "messageSent": "¡Mensaje Enviado!",
+    "messageSentDesc": "Gracias por contactarnos. Te responderemos dentro de 24 horas.",
+    "fullName": "Nombre Completo",
+    "emailAddress": "Dirección de Correo",
+    "phoneNumber": "Número de Teléfono",
+    "serviceInterest": "Interés en Servicio",
+    "message": "Mensaje",
+    "sendMessageButton": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "businessHours": "Horario de Atención",
+    "mondaySaturday": "Lunes - Sábado",
+    "sunday": "Domingo",
+    "closed": "Cerrado",
+    "getInTouch": "Ponte en Contacto",
+    "phone": "Teléfono",
+    "email": "Correo",
+    "address": "Dirección",
+    "findUs": "Encuéntranos",
+    "faq": "Preguntas Frecuentes",
+    "faqItems": [
+      {
+        "question": "¿Qué tan rápido puedo ser aprobado?",
+        "answer": "La mayoría de las aplicaciones son aprobadas dentro de 24 horas. Ofrecemos pre-aprobación el mismo día para clientes calificados."
+      },
+      {
+        "question": "¿Qué puntaje de crédito necesito?",
+        "answer": "Trabajamos con todos los tipos de crédito. Incluso con crédito menos que perfecto, a menudo podemos encontrar una solución que funcione para ti."
+      },
+      {
+        "question": "¿Hay tarifas ocultas?",
+        "answer": "Sin tarifas ocultas. Creemos en precios transparentes y explicaremos claramente todos los costos por adelantado."
+      },
+      {
+        "question": "¿Puedo refinanciar mi préstamo existente?",
+        "answer": "¡Sí! Ofrecemos opciones competitivas de refinanciamiento que pueden ayudar a reducir tu pago mensual o tasa de interés."
+      },
+      {
+        "question": "¿Por qué mi cobertura vehicular actual podría no protegerme realmente?",
+        "answer": "Desde la escasez de chips post-COVID, muchos concesionarios redujeron su inventario y dejaron de certificar vehículos correctamente. Si tu vehículo no está en la documentación del concesionario, tu cobertura certificada a través de un proveedor externo podría no aplicar realmente. Revisaremos tu situación y nos aseguraremos de que tengas protección real y verificada."
+      }
+    ],
+    "serviceOptions": {
+      "selectService": "Selecciona interés en servicio",
+      "autoRefinance": "Refinanciamiento de Préstamo de Auto",
+      "vehicleCoverage": "Cobertura y Certificaciones de Vehículo",
+      "homeRefinance": "Refinanciamiento de Casa",
+      "insurance": "Seguro de Auto",
+      "lifeInsurance": "Seguro de Vida",
+      "creditSavings": "Consultas de Crédito",
+      "other": "Otro"
+    }
+  },
+  "footer": {
+    "description": "Tu socio de confianza en financiamiento automotriz por más de una década. Estamos dedicados a proporcionar servicio y experiencia sin igual a nuestros clientes a nivel nacional.",
+    "nationwideCoverage": "Cobertura Nacional",
+    "ourServices": "Nuestros Servicios",
+    "calculators": "Calculadoras",
+    "company": "Empresa",
+    "termsOfService": "Términos de Servicio",
+    "privacyPolicy": "Política de Privacidad",
+    "doNotSell": "No Vender Mi Información",
+    "copyright": "Todos los derechos reservados."
+  },
+  "email": {
+    "autoLoanEstimate": {
+      "subject": "Tu Estimación de Préstamo de Auto - Apex Auto Solutions Inc.",
+      "title": "ESTIMACIÓN DE PRÉSTAMO DE AUTO",
+      "company": "Apex Auto Solutions Inc.",
+      "subtitle": "Servicios Profesionales de Financiamiento Automotriz",
+      "greeting": "Estimado/a {name},",
+      "thankYou": "¡Gracias por usar nuestra calculadora avanzada de préstamos de auto! Aquí está tu estimación de financiamiento personalizada:",
+      "vehicleInfo": "Información del Vehículo",
+      "loanDetails": "Detalles del Préstamo",
+      "paymentSummary": "Resumen de Pago",
+      "readyToGetApproved": "¿Listo para Obtener Pre-aprobación?",
+      "teamReady": "¡Nuestro equipo está listo para ayudarte a obtener las mejores tasas de préstamo de auto!",
+      "contactInfo": "Contáctanos hoy:",
+      "nextSteps": "Próximos Pasos:",
+      "nextStepsItems": [
+        "Contacta a nuestro equipo para discutir tus opciones específicas de préstamo",
+        "Completa una aplicación completa para aprobación final y mejores tasas",
+        "Obtén pre-aprobación y comienza a buscar tu vehículo perfecto"
+      ],
+      "bestRegards": "Saludos cordiales,",
+      "teamSignature": "El Equipo de Apex Auto Solutions",
+      "disclaimer": "Importante: Esta es una estimación automatizada basada en la información proporcionada. Los términos finales pueden variar según la aprobación de crédito, evaluación del vehículo y otros factores. Contáctanos para tasas y términos personalizados.",
+      "fields": {
+        "vehiclePrice": "Precio del Vehículo",
+        "downPayment": "Pago Inicial",
+        "tradeInValue": "Valor de Cambio",
+        "salesTax": "Impuesto de Venta ({stateName})",
+        "vehicleType": "Tipo de Vehículo",
+        "vehicleCategory": "Categoría del Vehículo",
+        "creditScore": "Puntaje de Crédito",
+        "interestRate": "Tasa de Interés",
+        "loanTerm": "Plazo del Préstamo",
+        "totalAmountFinanced": "Total Financiado",
+        "monthlyPayment": "Tu Pago Mensual Estimado",
+        "totalInterest": "Interés Total durante {termMonths} meses",
+        "totalCost": "Costo Total del Préstamo"
+      }
+    },
+    "homeLoanEstimate": {
+      "subject": "Tu Estimación de Préstamo de Casa - Apex Auto Solutions Inc.",
+      "title": "ESTIMACIÓN DE PRÉSTAMO DE CASA",
+      "greeting": "Estimado/a {firstName} {lastName},",
+      "thankYou": "¡Gracias por usar nuestra calculadora de préstamos de casa! Aquí están los detalles de tu préstamo personalizado:",
+      "propertyInfo": "Información de la Propiedad",
+      "paymentBreakdown": "Desglose de Pago",
+      "loanSummary": "Resumen del Préstamo",
+      "readyToGetPreApproved": "¿Listo para Obtener Pre-aprobación?",
+      "teamReady": "¡Nuestro equipo está listo para ayudarte a obtener las mejores tasas de préstamo de casa!",
+      "contactUs": "Contáctanos hoy:",
+      "fields": {
+        "homePrice": "Precio de la Casa",
+        "downPayment": "Pago Inicial",
+        "loanAmount": "Monto del Préstamo",
+        "loanTerm": "Plazo del Préstamo",
+        "interestRate": "Tasa de Interés",
+        "principalInterest": "Principal e Interés",
+        "propertyTax": "Impuesto Predial",
+        "homeInsurance": "Seguro de Casa",
+        "pmi": "PMI",
+        "totalInterest": "Interés Total",
+        "totalCost": "Costo Total"
+      }
+    },
+    "refinanceEstimate": {
+      "subject": "Comparación de Refinanciamiento de Auto - Apex Auto Solutions",
+      "greeting": "Estimado/a {name},",
+      "thankYou": "¡Gracias por usar nuestra calculadora de refinanciamiento de auto! Aquí está tu comparación personalizada:",
+      "currentLoanTitle": "Tu Préstamo Actual",
+      "newOfferTitle": "Nuestra Oferta de Refinanciamiento",
+      "savingsTitle": "Tus Ahorros Estimados",
+      "monthlySavings": "Ahorros Mensuales",
+      "readyToRefinance": "¿Listo para Refinanciar?",
+      "teamReady": "¡Nuestro equipo está listo para ayudarte a obtener mejores tasas y ahorrar dinero!",
+      "bestRegards": "Saludos cordiales,",
+      "teamSignature": "El Equipo de Apex Auto Solutions",
+      "disclaimer": "Esta es una estimación automatizada. Los términos finales pueden variar según la aprobación de crédito y otros factores. Los ahorros reales pueden variar.",
+      "fields": {
+        "loanBalance": "Saldo del Préstamo",
+        "apr": "Tasa de Porcentaje Anual",
+        "remainingTerm": "Plazo Restante",
+        "monthlyPayment": "Pago Mensual",
+        "interestRemaining": "Interés Restante",
+        "newApr": "Nueva Tasa de Porcentaje Anual",
+        "newTerm": "Nuevo Plazo",
+        "newMonthlyPayment": "Nuevo Pago Mensual",
+        "newTotalInterest": "Nuevo Interés Total",
+        "months": "meses"
+      }
+    },
+    "contactForm": {
+      "subject": "Nueva Solicitud de Formulario de Contacto - {name}",
+      "ownerSubject": "Nueva Solicitud de Formulario de Contacto - {name}",
+      "customerSubject": "Gracias por Contactar Apex Auto Solutions Inc.",
+      "title": "NUEVA SOLICITUD DE FORMULARIO DE CONTACTO",
+      "customerTitle": "GRACIAS POR CONTACTARNOS",
+      "greeting": "Estimado/a {name},",
+      "thankYou": "Gracias por contactar Apex Auto Solutions Inc. Hemos recibido tu mensaje y te responderemos dentro de 24 horas.",
+      "meanwhile": "Mientras tanto, siéntete libre de:",
+      "meanwhileItems": [
+        "Usar nuestra calculadora de préstamos de auto para obtener una estimación instantánea",
+        "Explorar nuestros servicios integrales",
+        "Conocer más sobre nuestra empresa"
+      ],
+      "lookForward": "Esperamos ayudarte a lograr tus objetivos financieros!",
+      "bestRegards": "Saludos cordiales,",
+      "teamSignature": "El Equipo de Apex Auto Solutions",
+      "followUp": "Por favor sigue con este cliente dentro de 24 horas.",
+      "fields": {
+        "name": "Nombre",
+        "email": "Correo",
+        "phone": "Teléfono",
+        "serviceInterest": "Interés en Servicio",
+        "message": "Mensaje"
+      }
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "Este campo es requerido",
+      "invalidEmail": "Por favor ingresa una dirección de correo válida",
+      "invalidPhone": "Por favor ingresa un número de teléfono válido",
+      "acceptTerms": "Por favor acepta los términos y condiciones"
+    },
+    "emailModal": {
+      "title": "Obtén Tu Cotización GRATIS de {type}",
+      "subtitle": "Simplemente completa la información a continuación y te seguiremos rápidamente con tu cotización gratuita sin compromiso.",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "emailAddress": "Dirección de Correo",
+      "mobileNumber": "Número Móvil",
+      "mobileNumberOptional": "Número Móvil (Opcional)",
+      "termsText": "Al enviar este formulario y registrarte para textos, consientes recibir mensajes de atención al cliente de Apex Auto Solutions en el número proporcionado, incluyendo mensajes enviados por marcador automático. El consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensaje y datos. La frecuencia de mensajes varía. Cancela la suscripción en cualquier momento respondiendo STOP o haciendo clic en el enlace de cancelación (donde esté disponible). Responde HELP para ayuda.",
+      "privacyPolicy": "Política de Privacidad",
+      "terms": "Términos",
+      "cancel": "Cancelar",
+      "getFreeQuote": "Obtener Cotización Gratuita",
+      "sending": "Enviando...",
+      "failedToSend": "Error al enviar solicitud de cotización. Por favor intenta de nuevo.",
+      "pleaseEnterFirstName": "Por favor ingresa tu nombre",
+      "pleaseEnterLastName": "Por favor ingresa tu apellido",
+      "pleaseEnterEmail": "Por favor ingresa tu dirección de correo",
+      "pleaseEnterValidEmail": "Por favor ingresa una dirección de correo válida"
+    }
+  },
+  "benefits": {
+    "hero": {
+      "title": "Beneficios de Refinanciamiento",
+      "subtitle": "Beneficios de cobertura integral que brindan tranquilidad en el camino",
+      "getCoverage": "Obtener Cobertura Hoy"
+    },
+    "intro": {
+      "title": "Conduce con Confianza",
+      "description": "Tu vehículo puede ser impredecible — y también la cobertura que crees tener. Desde la escasez de chips post-COVID, muchos concesionarios redujeron su inventario y dejaron de certificar vehículos correctamente. Eso significa que miles de conductores están pagando por cobertura certificada a través de proveedores externos sin que su vehículo realmente esté en la documentación del concesionario. Apex Auto Solutions te ayuda a entender para qué estás realmente cubierto y te brinda protección verdadera y verificada que toma el relevo donde termina tu garantía del fabricante."
+    },
+    "section": {
+      "title": "Beneficios de Cobertura Integral",
+      "subtitle": "Protección completa para cada aspecto de la propiedad de tu vehículo"
+    },
+    "benefits": [
+      {
+        "title": "Asistencia en Carretera",
+        "description": "Protección 24/7 con cobertura integral de asistencia en carretera.",
+        "features": ["Servicios de grúa", "Arranques", "Cambios de llanta", "Servicio de cerradura", "Hasta $100 de reembolso"]
+      },
+      {
+        "title": "Cobertura de Riesgos de Carretera",
+        "description": "Protección para daños de llantas por riesgos de carretera con límites generosos de reembolso.",
+        "features": ["Beneficio máximo de $400", "Cobertura de reparación de llantas", "Cobertura de reemplazo", "Riesgos de carreteras públicas", "Hasta $100 por llanta"]
+      },
+      {
+        "title": "Reembolso de Auto de Renta",
+        "description": "Vuelve al camino rápidamente con cobertura de auto de renta durante reparaciones.",
+        "features": ["Cobertura de $30 por día", "Hasta $150 por ocurrencia", "Todos los tipos de programa", "Procesamiento rápido", "Términos flexibles"]
+      },
+      {
+        "title": "Interrupción de Viaje",
+        "description": "Protección adicional para estadías nocturnas cuando estés varado lejos de casa.",
+        "features": ["Reembolso de $75 por día", "Hasta 3 días de cobertura", "Más de 100 millas de casa", "Cualquier elección de hotel", "Cobertura de comidas incluida"]
+      },
+      {
+        "title": "Beneficios de Mantenimiento",
+        "description": "Mantén tu vehículo en excelente condición con cobertura integral de mantenimiento.",
+        "features": ["Cambios de aceite incluidos", "Cobertura de pastillas de freno", "Reemplazo de batería", "Mantenimiento del sistema de enfriamiento", "Inspección de seguridad gratuita"]
+      },
+      {
+        "title": "Protección Extendida",
+        "description": "Cobertura verdadera que llena los vacíos dejados por los cambios recientes en las certificaciones de concesionarios — protección verificada que se extiende mucho más allá de tu garantía del fabricante.",
+        "features": ["Planes personalizables", "Más allá de los límites de garantía", "Seguridad financiera", "Certificación vehicular verificada", "Tranquilidad"]
+      }
+    ],
+    "cta": {
+      "title": "¿Listo para Proteger tu Inversión?",
+      "subtitle": "Únete a miles de clientes satisfechos que confían en Apex Auto Solutions para sus necesidades de cobertura vehicular.",
+      "getCoverage": "Obtén tu Cobertura Hoy",
+      "learnMore": "Saber Más sobre Servicios"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "Política de Privacidad",
+      "subtitle": "Tu privacidad es importante para nosotros. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando usas nuestros servicios."
+    },
+    "sections": [
+      {
+        "title": "Información que Recopilamos",
+        "content": "Recopilamos información que nos proporcionas directamente, como cuando creas una cuenta, solicitas un préstamo o nos contactas para soporte. Esto puede incluir tu nombre, dirección de correo electrónico, número de teléfono, fecha de nacimiento, número de Seguro Social, información de empleo e información financiera."
+      },
+      {
+        "title": "Cómo Usamos tu Información",
+        "content": "Usamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, procesar tus solicitudes de préstamo, comunicarnos contigo sobre tu cuenta y nuestros servicios, y cumplir con obligaciones legales. También podemos usar tu información para fines de marketing con tu consentimiento."
+      },
+      {
+        "title": "Compartir Información",
+        "content": "Podemos compartir tu información con proveedores de servicios de terceros que nos ayudan a operar nuestro sitio web y realizar nuestro negocio, así como con prestamistas e instituciones financieras para procesar tus solicitudes de préstamo. No vendemos tu información personal a terceros."
+      },
+      {
+        "title": "Seguridad de Datos",
+        "content": "Implementamos medidas de seguridad técnicas y organizacionales apropiadas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción. Sin embargo, ningún método de transmisión por internet o almacenamiento electrónico es 100% seguro."
+      },
+      {
+        "title": "Cookies y Seguimiento",
+        "content": "Usamos cookies y tecnologías de seguimiento similares para recopilar información sobre tus actividades de navegación y preferencias. Puedes controlar la configuración de cookies a través de tu navegador, pero deshabilitar las cookies puede afectar la funcionalidad de nuestro sitio web."
+      },
+      {
+        "title": "Enlaces de Terceros",
+        "content": "Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad o el contenido de estos sitios externos. Te alentamos a revisar las políticas de privacidad de cualquier sitio de terceros que visites."
+      },
+      {
+        "title": "Privacidad de Menores",
+        "content": "Nuestros servicios no están destinados a niños menores de 13 años. No recopilamos conscientemente información personal de niños menores de 13 años. Si nos enteramos de que hemos recopilado información personal de un niño menor de 13 años, tomaremos medidas para eliminar dicha información."
+      },
+      {
+        "title": "Tus Derechos",
+        "content": "Tienes derecho a acceder, actualizar o eliminar tu información personal. También puedes optar por no recibir comunicaciones de marketing en cualquier momento. Para ejercer estos derechos, por favor contáctanos usando la información proporcionada en la sección de Contacto."
+      },
+      {
+        "title": "Cambios a esta Política",
+        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio material publicando la nueva Política de Privacidad en esta página y actualizando la fecha de 'Última Actualización'. Tu uso continuo de nuestros servicios después de dichas modificaciones constituye la aceptación de la política actualizada."
+      },
+      {
+        "title": "Contáctanos",
+        "content": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de privacidad, por favor contáctanos usando la información proporcionada en la sección de Contacto a continuación."
+      }
+    ],
+    "contact": {
+      "title": "Información de Contacto",
+      "subtitle": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de privacidad, por favor contáctanos:",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "website": "Sitio Web"
+    },
+    "lastUpdated": "Última Actualización:"
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "subtitle": "Por favor lee estos términos cuidadosamente antes de usar nuestros servicios. Al acceder a nuestro sitio web, aceptas estar sujeto a estos términos.",
+    "sections": [
+      {
+        "title": "Aceptación de Términos",
+        "content": "Al acceder y usar este sitio web y nuestros servicios de refinanciamiento de préstamos de auto, aceptas y acuerdas estar sujeto a los términos y disposiciones de este acuerdo."
+      },
+      {
+        "title": "Licencia de Uso",
+        "content": "Se otorga permiso para descargar temporalmente una copia de los materiales en el sitio web de Apex Auto Solutions solo para visualización personal y no comercial transitoria."
+      },
+      {
+        "title": "Descargo de Responsabilidad",
+        "content": "Los materiales en el sitio web de Apex Auto Solutions se proporcionan 'tal como están'. Apex Auto Solutions no ofrece garantías, expresas o implícitas, y por la presente rechaza y niega todas las demás garantías incluyendo sin limitación, garantías implícitas o condiciones de comerciabilidad, idoneidad para un propósito particular, o no infracción de propiedad intelectual u otra violación de derechos."
+      },
+      {
+        "title": "Limitaciones",
+        "content": "En ningún caso Apex Auto Solutions o sus proveedores serán responsables por daños (incluyendo, sin limitación, daños por pérdida de datos o ganancias, o debido a interrupción del negocio) que surjan del uso o incapacidad de usar los materiales en el sitio web de Apex Auto Solutions, incluso si Apex Auto Solutions o un representante autorizado ha sido notificado oralmente o por escrito de la posibilidad de tal daño."
+      },
+      {
+        "title": "Política de Privacidad",
+        "content": "Tu privacidad es importante para nosotros. Recopilamos información personal solo cuando nos la proporcionas voluntariamente. Usamos esta información para proporcionarte nuestros servicios y podemos contactarte con respecto a tu solicitud de refinanciamiento de préstamo de auto."
+      },
+      {
+        "title": "Consentimiento de Comunicación",
+        "content": "Al enviar tu información, consientes recibir comunicaciones de Apex Auto Solutions y sus socios por correo electrónico, llamadas telefónicas, mensajes de texto y otras formas de comunicación, incluyendo tecnología automatizada como marcadores automáticos y mensajes pregrabados. Puedes optar por no recibir estas comunicaciones en cualquier momento."
+      },
+      {
+        "title": "Precisión de Materiales",
+        "content": "Los materiales que aparecen en el sitio web de Apex Auto Solutions podrían incluir errores técnicos, tipográficos o fotográficos. Apex Auto Solutions no garantiza que ninguno de los materiales en su sitio web sean precisos, completos o actuales."
+      },
+      {
+        "title": "Enlaces",
+        "content": "Apex Auto Solutions no ha revisado todos los sitios vinculados a nuestro sitio web y no es responsable del contenido de cualquier sitio vinculado. La inclusión de cualquier enlace no implica respaldo por parte de Apex Auto Solutions del sitio."
+      },
+      {
+        "title": "Modificaciones",
+        "content": "Apex Auto Solutions puede revisar estos términos de servicio para su sitio web en cualquier momento sin previo aviso. Al usar este sitio web, aceptas estar sujeto a la versión actual de estos términos de servicio."
+      },
+      {
+        "title": "Ley Aplicable",
+        "content": "Estos términos y condiciones se rigen por y se interpretan de acuerdo con las leyes de los Estados Unidos y irrevocablemente te sometes a la jurisdicción exclusiva de los tribunales en ese estado o ubicación."
+      }
+    ],
+    "contact": {
+      "title": "Información de Contacto",
+      "subtitle": "Si tienes alguna pregunta sobre estos Términos y Condiciones, por favor contáctanos:",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "website": "Sitio Web"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Acerca de Apex Auto Solutions",
+      "subtitle": "Tu socio de confianza en financiamiento automotriz por más de una década. Estamos dedicados a proporcionar servicio y experiencia sin igual a nuestros clientes a nivel nacional.",
+      "getQuote": "Obtén tu Cotización",
+      "contactTeam": "Contacta a Nuestro Equipo"
+    },
+    "trusted": "Confiable y Reconocido",
+    "featured": "Como aparece en las principales publicaciones financieras",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Proporcionar soluciones de financiamiento automotriz accesibles, transparentes y competitivas que ayuden a individuos y empresas a lograr sus objetivos de transporte mientras construimos relaciones duraderas basadas en la confianza y el servicio excepcional.",
+      "description2": "Estamos dedicados a proporcionar servicio y experiencia sin igual a nuestros clientes a nivel nacional. Nuestro equipo de profesionales experimentados trabaja incansablemente para entender tus necesidades financieras únicas y adaptar soluciones que superen tus expectativas."
+    },
+    "story": {
+      "title": "Nuestra Historia",
+      "subtitle": "Liderando el camino en soluciones financieras automotrices desde 2012",
+      "paragraph1": "Fundada en 2012, Apex Auto Solutions comenzó con una visión simple: hacer que el financiamiento automotriz sea accesible y transparente para todos. Lo que comenzó como un pequeño equipo de profesionales financieros se ha convertido en un nombre confiable en la industria de préstamos automotrices.",
+      "paragraph2": "Reconocimos que las instituciones de préstamos tradicionales a menudo hacían que el proceso de financiamiento fuera complicado e intimidante. Nuestros fundadores se propusieron cambiar eso creando un enfoque centrado en el cliente que prioriza la claridad, tasas competitivas y servicio excepcional.",
+      "paragraph3": "Hoy, hemos ayudado a miles de clientes a obtener financiamiento para sus vehículos soñados, desde compradores primerizos hasta entusiastas de autos experimentados. Nuestro compromiso con la innovación y la satisfacción del cliente continúa impulsando nuestro crecimiento y éxito."
+    },
+    "statistics": {
+      "title": "Por los Números",
+      "customersServed": "Clientes Atendidos",
+      "yearsInBusiness": "Años en el Negocio",
+      "averageSavings": "Ahorros Promedio",
+      "customerSatisfaction": "Satisfacción del Cliente"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "subtitle": "Los principios que guían todo lo que hacemos",
+      "transparency": {
+        "title": "Transparencia",
+        "description": "Comunicación clara y honesta sin tarifas ocultas o sorpresas. Creemos en la transparencia completa durante todo el proceso."
+      },
+      "speed": {
+        "title": "Velocidad",
+        "description": "Aprobaciones rápidas y procesamiento rápido para llevarte al camino más pronto. Nuestros procesos optimizados aseguran que no esperes innecesariamente."
+      },
+      "partnership": {
+        "title": "Asociación",
+        "description": "Trabajamos contigo para encontrar la mejor solución para tu situación única. Tu éxito es nuestro éxito, y estamos comprometidos con tu bienestar financiero."
+      },
+      "excellence": {
+        "title": "Excelencia",
+        "description": "Compromiso con los más altos estándares en todo lo que hacemos. Mejoramos continuamente nuestros servicios para superar tus expectativas."
+      }
+    },
+    "team": {
+      "title": "Conoce a Nuestro Equipo",
+      "subtitle": "Profesionales experimentados dedicados a tu éxito",
+      "michael": {
+        "title": "CEO y Fundador",
+        "description": "Más de 15 años en finanzas automotrices, apasionado por el éxito del cliente y el empoderamiento financiero."
+      },
+      "sarah": {
+        "title": "VP de Operaciones",
+        "description": "Experta en procesamiento de préstamos y gestión de relaciones con clientes con enfoque en la excelencia operacional."
+      },
+      "david": {
+        "title": "Jefe de Tecnología",
+        "description": "Liderando nuestra transformación digital e iniciativas de experiencia del cliente para hacer el financiamiento más accesible."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Trabajar con Nosotros?",
+      "subtitle": "Experimenta la diferencia de Apex Auto Solutions. Obtén tu cotización personalizada hoy.",
+      "getQuote": "Obtén tu Cotización",
+      "contactTeam": "Contacta a Nuestro Equipo"
+    }
+  },
+  "homeLoanCalculator": {
+    "title": "Calculadora de Préstamo de Casa",
+    "subtitle": "Calcula tus pagos mensuales de hipoteca y explora opciones de financiamiento inmobiliario",
+    "loanDetails": "Detalles del Préstamo",
+    "paymentBreakdown": "Desglose de Pago",
+    "homePrice": "Precio de la Casa",
+    "downPayment": "Pago Inicial",
+    "loanTerm": "Plazo del Préstamo",
+    "interestRate": "Tasa de Interés",
+    "propertyTax": "Impuesto Predial",
+    "homeInsurance": "Seguro de Casa",
+    "pmi": "PMI",
+    "estimatedMonthlyPayment": "Pago Mensual Estimado",
+    "principalInterest": "Principal e Interés",
+    "totalInterest": "Interés Total",
+    "totalCost": "Costo Total",
+    "getQuote": "Obtener Mi Cotización de Préstamo de Casa",
+    "resetCalculator": "Reiniciar Calculadora",
+    "autoCalculated": "(Auto-calculado)",
+    "paymentBreakdownTitle": "Desglose de Pago",
+    "loanTermOptions": {
+      "15": "15 Años",
+      "20": "20 Años",
+      "25": "25 Años",
+      "30": "30 Años"
+    },
+    "interestRateOptions": {
+      "excellent": "5.5% (Crédito Excelente)",
+      "good": "6.0% (Buen Crédito)",
+      "fair": "6.5% (Crédito Regular)",
+      "average": "7.0% (Crédito Promedio)",
+      "belowAverage": "7.5% (Por Debajo del Promedio)"
+    },
+    "paymentBreakdown": {
+      "principalInterest": "Principal e Interés",
+      "propertyTax": "Impuesto Predial",
+      "homeInsurance": "Seguro de Casa",
+      "pmi": "PMI",
+      "loanAmount": "Monto del Préstamo",
+      "totalInterest": "Interés Total",
+      "totalCost": "Costo Total"
+    },
+    "pmiWarning": "Nota: Un pago inicial menor al 20% puede requerir PMI",
+    "getEstimateButton": "Obtener Mi Estimación de Préstamo de Casa"
+  },
+  "services": {
+    "hero": {
+      "title": "Servicios Financieros Integrales",
+      "subtitle": "Soluciones personalizadas para tus objetivos financieros. Desde refinanciamiento automotriz hasta refinanciamiento de casa, estamos aquí para ayudarte a tener éxito.",
+      "getQuote": "Obtener Tu Cotización",
+      "contactUs": "Contáctanos"
+    },
+    "section": {
+      "title": "Nuestros Servicios",
+      "subtitle": "Soluciones financieras profesionales diseñadas para ayudarte a alcanzar tus objetivos"
+    },
+    "features": {
+      "lowerRates": "Tasas más bajas",
+      "quickApproval": "Aprobación rápida",
+      "noPenalties": "Sin penalizaciones",
+      "flexibleTerms": "Términos flexibles",
+      "expertGuidance": "Orientación experta",
+      "fastResults": "Resultados rápidos",
+      "fullCoverage": "Cobertura completa",
+      "roadsideAssistance": "Asistencia en carretera",
+      "manufacturerProtection": "Protección a nivel de fabricante",
+      "costSavings": "Ahorro de costos",
+      "customizablePlans": "Planes personalizables",
+      "beyondWarranty": "Más allá de la garantía",
+      "financialSecurity": "Seguridad financiera",
+      "peaceOfMind": "Tranquilidad",
+      "lowerPayments": "Pagos más bajos",
+      "betterRates": "Mejores tasas",
+      "equityAccess": "Acceso a capital",
+      "flexibleOptions": "Opciones flexibles",
+      "budgetFriendly": "Económico",
+      "comprehensiveCoverage": "Cobertura integral",
+      "personalizedService": "Servicio personalizado",
+      "familyProtection": "Protección familiar",
+      "affordablePremiums": "Primas asequibles",
+      "tailoredCoverage": "Cobertura personalizada",
+      "longTermSecurity": "Seguridad a largo plazo",
+      "creditImprovement": "Mejora de crédito",
+      "savingsStrategies": "Estrategias de ahorro",
+      "debtReduction": "Reducción de deuda",
+      "financialPlanning": "Planificación financiera"
+    },
+    "learnMore": "Aprender Más",
+    "cta": {
+      "title": "¿Listo para Comenzar?",
+      "subtitle": "Contáctanos hoy para aprender más sobre nuestros servicios y cómo podemos ayudarte a alcanzar tus objetivos financieros.",
+      "contactUs": "Contáctanos",
+      "getQuote": "Obtener Tu Cotización"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "reset": "Reiniciar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "continue": "Continuar",
+    "finish": "Finalizar",
+    "yes": "Sí",
+    "no": "No",
+    "ok": "OK"
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "benefits": "Benefits",
+    "contact": "Contact",
+    "calculators": "Calculators",
+    "autoLoanCalculator": "Auto Refinance Calculator",
+    "homeLoanCalculator": "Home Loan Calculator",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Drive Towards Financial Success",
+      "subtitle": "Lower rates, flexible terms, fast approval. Your journey to financial freedom starts here.",
+      "quickApproval": "Quick Approval",
+      "quickApprovalDesc": "Get pre-approved in minutes, not days",
+      "competitiveRates": "Competitive Rates",
+      "competitiveRatesDesc": "Save thousands with our low interest rates",
+      "trustedService": "Trusted Service",
+      "trustedServiceDesc": "12+ years of helping customers succeed",
+      "learnMore": "Learn More"
+    },
+    "services": {
+      "title": "Comprehensive Financial Solutions",
+      "subtitle": "We're not just here to save you money — we're here to educate you. From understanding what your coverage really includes to lowering your rates, we help you make informed financial decisions.",
+      "autoRefinance": {
+        "title": "Auto Loan Refinance",
+        "description": "Take advantage of lower interest rates and flexible terms by refinancing your auto loan with Apex Auto Solutions Inc."
+      },
+      "vehicleCoverage": {
+        "title": "Vehicle Coverage & Certifications",
+        "description": "Many drivers are paying for coverage that doesn't actually protect their vehicle. We help you understand what's really on your paperwork and get you true, verified coverage with real peace of mind."
+      },
+      "homeRefinance": {
+        "title": "Home Refinance",
+        "description": "Explore options for refinancing your home to lower monthly payments, reduce interest rates, or access equity."
+      },
+      "insuranceConsultation": {
+        "title": "Auto Insurance",
+        "description": "Navigate auto insurance complexities and find coverage that meets your needs and budget."
+      },
+      "lifeInsurance": {
+        "title": "Life Insurance",
+        "description": "Secure your family's financial future with affordable life insurance solutions tailored to your unique needs and circumstances."
+      },
+      "creditSavings": {
+        "title": "Credit Consultations",
+        "description": "Take control of your financial health with expert credit improvement strategies and personalized consultations designed to build lasting wealth."
+      },
+      "learnMore": "Learn More"
+    },
+    "trust": {
+      "title": "Trusted Nationwide Coverage",
+      "subtitle": "Leading the way in automotive financial solutions"
+    },
+    "cta": {
+      "title": "Ready to Take Control of Your Finances?",
+      "subtitle": "Join the Apex Auto Solutions Inc. family today and secure a brighter financial future.",
+      "getStarted": "Get Started Today",
+      "learnMore": "Learn More"
+    }
+  },
+  "calculator": {
+    "title": "Calculate Your Payment",
+    "subtitle": "Get an instant estimate for your auto loan",
+    "loanDetails": "Loan Details",
+    "paymentBreakdown": "Payment Breakdown",
+    "vehiclePrice": "Vehicle Price",
+    "downPayment": "Down Payment",
+    "creditScore": "Credit Score",
+    "state": "State",
+    "vehicleType": "Vehicle Type",
+    "vehicleYear": "Vehicle Year",
+    "vehicleCategory": "Vehicle Category",
+    "interestRate": "Interest Rate",
+    "loanTerm": "Loan Term",
+    "estimatedMonthlyPayment": "Estimated Monthly Payment",
+    "vehiclePriceLabel": "Vehicle Price",
+    "salesTax": "Sales Tax",
+    "downPaymentLabel": "Down Payment",
+    "totalFinanced": "Total Financed",
+    "totalInterest": "Total Interest",
+    "totalCost": "Total Cost",
+    "refinanceTitle": "Auto Loan Refinance Calculator",
+    "refinanceSubtitle": "Compare your current loan to our refinance offers",
+    "currentLoanSection": "Current Loan",
+    "balanceLeft": "Loan Balance Remaining",
+    "currentMonthlyPayment": "Current Monthly Payment",
+    "currentApr": "Current APR",
+    "currentTermYears": "Current Term",
+    "remainingTermYears": "Remaining Term",
+    "originalLoanTermYears": "Original Loan Term",
+    "newOfferSection": "New Offer",
+    "newApr": "New APR",
+    "newTermYears": "New Term",
+    "newMonthlyPayment": "New Monthly Payment",
+    "savingsSection": "Your Savings",
+    "monthlySavings": "Monthly Savings",
+    "differenceInInterest": "Interest Savings",
+    "differenceInInterestHelp": "Positive = savings, Negative = paying more",
+    "interestSavings": "Interest Savings",
+    "interestSavingsHelp": "Total interest savings over the life of the loan",
+    "monthlyPaymentWarning": "You'll pay more per month with these inputs.",
+    "getQuote": "Get My Refinance Quote",
+    "resetCalculator": "Reset Calculator",
+    "yearOptions": {
+      "1": "1 Year",
+      "2": "2 Years",
+      "3": "3 Years",
+      "4": "4 Years",
+      "5": "5 Years",
+      "6": "6 Years",
+      "7": "7 Years"
+    },
+    "page": {
+      "title": "Financial Calculators",
+      "subtitle": "Calculate your loan payments and find the best financing options for your needs",
+      "autoDescription": "Calculate your monthly auto loan payments and explore financing options",
+      "homeDescription": "Calculate your monthly mortgage payments and explore home financing options",
+      "loading": "Loading calculator..."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for personalized assistance and expert advice. We're here to help you achieve your financial goals.",
+    "calculatePayment": "Calculate Your Payment",
+    "viewServices": "View Our Services",
+    "sendMessage": "Send us a Message",
+    "messageSent": "Message Sent!",
+    "messageSentDesc": "Thank you for contacting us. We'll get back to you within 24 hours.",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "serviceInterest": "Service Interest",
+    "message": "Message",
+    "sendMessageButton": "Send Message",
+    "sending": "Sending...",
+    "businessHours": "Business Hours",
+    "mondaySaturday": "Monday - Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "getInTouch": "Get in Touch",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "findUs": "Find Us",
+    "faq": "Frequently Asked Questions",
+    "faqItems": [
+      {
+        "question": "How quickly can I get approved?",
+        "answer": "Most applications are approved within 24 hours. We offer same-day pre-approval for qualified customers."
+      },
+      {
+        "question": "What credit score do I need?",
+        "answer": "We work with all credit types. Even with less-than-perfect credit, we can often find a solution that works for you."
+      },
+      {
+        "question": "Are there any hidden fees?",
+        "answer": "No hidden fees. We believe in transparent pricing and will clearly explain all costs upfront."
+      },
+      {
+        "question": "Can I refinance my existing loan?",
+        "answer": "Yes! We offer competitive refinancing options that can help lower your monthly payment or interest rate."
+      },
+      {
+        "question": "Why might my current vehicle coverage not actually protect me?",
+        "answer": "Since the post-COVID chip shortage, many dealerships reduced their stock and stopped properly certifying vehicles. If your vehicle isn't on the dealer's paperwork, your certified coverage through a third-party provider may not actually apply. We'll review your situation and make sure you have real, verified protection."
+      }
+    ],
+    "serviceOptions": {
+      "selectService": "Select service interest",
+      "autoRefinance": "Auto Loan Refinance",
+      "vehicleCoverage": "Vehicle Coverage & Certifications",
+      "homeRefinance": "Home Refinance",
+      "insurance": "Auto Insurance",
+      "lifeInsurance": "Life Insurance",
+      "creditSavings": "Credit Consultations",
+      "other": "Other"
+    }
+  },
+  "footer": {
+    "description": "Your trusted partner in automotive financing for over a decade. We're dedicated to providing unparalleled service and expertise to our clients nationwide.",
+    "nationwideCoverage": "Nationwide Coverage",
+    "ourServices": "Our Services",
+    "calculators": "Calculators",
+    "company": "Company",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "doNotSell": "Do Not Sell My Information",
+    "copyright": "All rights reserved."
+  },
+  "email": {
+    "autoLoanEstimate": {
+      "subject": "Your Auto Loan Estimate - Apex Auto Solutions Inc.",
+      "title": "AUTO LOAN ESTIMATE",
+      "company": "Apex Auto Solutions Inc.",
+      "subtitle": "Professional Auto Financing Services",
+      "greeting": "Dear {name},",
+      "thankYou": "Thank you for using our advanced auto loan calculator! Here's your personalized financing estimate:",
+      "vehicleInfo": "Vehicle Information",
+      "loanDetails": "Loan Details",
+      "paymentSummary": "Payment Summary",
+      "readyToGetApproved": "Ready to Get Pre-Approved?",
+      "teamReady": "Our team is ready to help you secure the best auto loan rates!",
+      "contactInfo": "Contact us today:",
+      "nextSteps": "Next Steps:",
+      "nextStepsItems": [
+        "Contact our team to discuss your specific loan options",
+        "Complete a full application for final approval and better rates",
+        "Get pre-approved and start shopping for your perfect vehicle"
+      ],
+      "bestRegards": "Best regards,",
+      "teamSignature": "The Apex Auto Solutions Team",
+      "disclaimer": "The preapproval goals mentioned are targets based on our experience working with similar customers and are not a guarantee of specific outcomes. Actual results will vary depending on individual circumstances, credit profiles, and lender decisions. These goals are not a promise or commitment from lenders, and our role is to facilitate the refinancing process. We're committed to helping you explore options and potential savings tailored to your situation. Nothing in this document speaks for the lenders, these are just goals. We move forward with all customers because we believe our process provides value and support, helping you in multiple ways regardless of the refinancing outcome.",
+      "fields": {
+        "vehiclePrice": "Vehicle Price",
+        "downPayment": "Down Payment",
+        "tradeInValue": "Trade-In Value",
+        "salesTax": "Sales Tax ({stateName})",
+        "vehicleType": "Vehicle Type",
+        "vehicleCategory": "Vehicle Category",
+        "creditScore": "Credit Score",
+        "interestRate": "Interest Rate",
+        "loanTerm": "Loan Term",
+        "totalAmountFinanced": "Total Amount Financed",
+        "monthlyPayment": "Your Estimated Monthly Payment",
+        "totalInterest": "Total Interest Over {termMonths} months",
+        "totalCost": "Total Cost of Loan"
+      }
+    },
+    "homeLoanEstimate": {
+      "subject": "Your Home Loan Estimate - Apex Auto Solutions Inc.",
+      "title": "HOME LOAN ESTIMATE",
+      "greeting": "Dear {firstName} {lastName},",
+      "thankYou": "Thank you for using our home loan calculator! Here are your personalized loan details:",
+      "propertyInfo": "Property Information",
+      "paymentBreakdown": "Payment Breakdown",
+      "loanSummary": "Loan Summary",
+      "readyToGetPreApproved": "Ready to Get Pre-Approved?",
+      "teamReady": "Our team is ready to help you secure the best home loan rates!",
+      "contactUs": "Contact us today:",
+      "fields": {
+        "homePrice": "Home Price",
+        "downPayment": "Down Payment",
+        "loanAmount": "Loan Amount",
+        "loanTerm": "Loan Term",
+        "interestRate": "Interest Rate",
+        "principalInterest": "Principal & Interest",
+        "propertyTax": "Property Tax",
+        "homeInsurance": "Home Insurance",
+        "pmi": "PMI",
+        "totalInterest": "Total Interest",
+        "totalCost": "Total Cost"
+      }
+    },
+    "refinanceEstimate": {
+      "subject": "Auto Refinance Comparison - Apex Auto Solutions",
+      "greeting": "Dear {name},",
+      "thankYou": "Thank you for using our auto refinance calculator! Here's your personalized comparison:",
+      "currentLoanTitle": "Your Current Loan",
+      "newOfferTitle": "Our Refinance Offer",
+      "savingsTitle": "Your Estimated Savings",
+      "monthlySavings": "Monthly Savings",
+      "readyToRefinance": "Ready to Refinance?",
+      "teamReady": "Our team is ready to help you secure better rates and save money!",
+      "bestRegards": "Best regards,",
+      "teamSignature": "The Apex Auto Solutions Team",
+      "disclaimer": "The preapproval goals mentioned are targets based on our experience working with similar customers and are not a guarantee of specific outcomes. Actual results will vary depending on individual circumstances, credit profiles, and lender decisions. These goals are not a promise or commitment from lenders, and our role is to facilitate the refinancing process. We're committed to helping you explore options and potential savings tailored to your situation. Nothing in this document speaks for the lenders, these are just goals. We move forward with all customers because we believe our process provides value and support, helping you in multiple ways regardless of the refinancing outcome.",
+      "fields": {
+        "loanBalance": "Loan Balance",
+        "apr": "APR",
+        "remainingTerm": "Remaining Term",
+        "monthlyPayment": "Monthly Payment",
+        "interestRemaining": "Interest Remaining",
+        "newApr": "New APR",
+        "newTerm": "New Term",
+        "newMonthlyPayment": "New Monthly Payment",
+        "newTotalInterest": "New Total Interest",
+        "months": "months"
+      }
+    },
+    "contactForm": {
+      "subject": "New Contact Form Submission - {name}",
+      "ownerSubject": "New Contact Form Submission - {name}",
+      "customerSubject": "Thank You for Contacting Apex Auto Solutions Inc.",
+      "title": "NEW CONTACT FORM SUBMISSION",
+      "customerTitle": "THANK YOU FOR CONTACTING US",
+      "greeting": "Dear {name},",
+      "thankYou": "Thank you for reaching out to Apex Auto Solutions Inc. We have received your message and will get back to you within 24 hours.",
+      "meanwhile": "In the meantime, feel free to:",
+      "meanwhileItems": [
+        "Use our auto loan calculator to get an instant estimate",
+        "Explore our comprehensive services",
+        "Learn more about our company"
+      ],
+      "lookForward": "We look forward to helping you achieve your financial goals!",
+      "bestRegards": "Best regards,",
+      "teamSignature": "The Apex Auto Solutions Team",
+      "followUp": "Please follow up with this customer within 24 hours.",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "serviceInterest": "Service Interest",
+        "message": "Message"
+      }
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number",
+      "acceptTerms": "Please accept the terms and conditions"
+    },
+    "emailModal": {
+      "title": "Get Your FREE {type} Quote",
+      "subtitle": "Simply fill out the information below and we will follow up fast with your free no-obligation quote.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "emailAddress": "Email Address",
+      "mobileNumber": "Mobile Number",
+      "mobileNumberOptional": "Mobile Number (Optional)",
+      "termsText": "By clicking 'Get Free Quote Now!' button, you certify that you have provided your legal name and your own phone number, you agree to our Terms and Conditions and Privacy Policy and authorize Apex Auto Solutions Inc and its partners to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate 'Do Not Call' list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the 'Get Free Quote Now!' button and submitting this form, I affirm that I have read and agree to this Site's Terms and Conditions (including the arbitration provision and the E-SIGN consent) and Privacy Policy.",
+      "privacyPolicy": "Privacy Policy",
+      "terms": "Terms",
+      "cancel": "Cancel",
+      "getFreeQuote": "Get Free Quote Now!",
+      "sending": "Sending...",
+      "failedToSend": "Failed to send quote request. Please try again.",
+      "pleaseEnterFirstName": "Please enter your first name",
+      "pleaseEnterLastName": "Please enter your last name",
+      "pleaseEnterEmail": "Please enter your email address",
+      "pleaseEnterValidEmail": "Please enter a valid email address"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Comprehensive Financial Services",
+      "subtitle": "Tailored solutions for your financial goals. From auto refinancing to home refinancing, we're here to help you succeed.",
+      "getQuote": "Get Your Quote",
+      "contactUs": "Contact Us"
+    },
+    "section": {
+      "title": "Our Services",
+      "subtitle": "Professional financial solutions designed to help you achieve your goals"
+    },
+    "features": {
+      "lowerRates": "Lower rates",
+      "quickApproval": "Quick approval",
+      "noPenalties": "No penalties",
+      "flexibleTerms": "Flexible terms",
+      "expertGuidance": "Expert guidance",
+      "fastResults": "Fast results",
+      "fullCoverage": "Full coverage",
+      "roadsideAssistance": "Roadside assistance",
+      "manufacturerProtection": "Manufacturer-level protection",
+      "costSavings": "Cost savings",
+      "customizablePlans": "Customizable plans",
+      "beyondWarranty": "Beyond warranty",
+      "financialSecurity": "Financial security",
+      "peaceOfMind": "Peace of mind",
+      "lowerPayments": "Lower payments",
+      "betterRates": "Better rates",
+      "equityAccess": "Equity access",
+      "flexibleOptions": "Flexible options",
+      "budgetFriendly": "Budget-friendly",
+      "comprehensiveCoverage": "Comprehensive coverage",
+      "personalizedService": "Personalized service",
+      "familyProtection": "Family protection",
+      "affordablePremiums": "Affordable premiums",
+      "tailoredCoverage": "Tailored coverage",
+      "longTermSecurity": "Long-term security",
+      "creditImprovement": "Credit improvement",
+      "savingsStrategies": "Savings strategies",
+      "debtReduction": "Debt reduction",
+      "financialPlanning": "Financial planning"
+    },
+    "learnMore": "Learn More",
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us today to learn more about our services and how we can help you achieve your financial goals.",
+      "contactUs": "Contact Us",
+      "getQuote": "Get Your Quote"
+    }
+  },
+  "homeLoanCalculator": {
+    "title": "Home Loan Calculator",
+    "subtitle": "Calculate your monthly mortgage payments and explore home financing options",
+    "loanDetails": "Loan Details",
+    "homePrice": "Home Price",
+    "downPayment": "Down Payment",
+    "loanTerm": "Loan Term",
+    "interestRate": "Interest Rate",
+    "propertyTax": "Property Tax",
+    "homeInsurance": "Home Insurance",
+    "pmi": "PMI",
+    "estimatedMonthlyPayment": "Estimated Monthly Payment",
+    "principalInterest": "Principal & Interest",
+    "totalInterest": "Total Interest",
+    "totalCost": "Total Cost",
+    "getQuote": "Get My Home Loan Quote",
+    "resetCalculator": "Reset Calculator",
+    "autoCalculated": "(Auto-calculated)",
+    "paymentBreakdownTitle": "Payment Breakdown",
+    "loanTermOptions": {
+      "15": "15 Years",
+      "20": "20 Years",
+      "25": "25 Years",
+      "30": "30 Years"
+    },
+    "interestRateOptions": {
+      "excellent": "5.5% (Excellent Credit)",
+      "good": "6.0% (Good Credit)",
+      "fair": "6.5% (Fair Credit)",
+      "average": "7.0% (Average Credit)",
+      "belowAverage": "7.5% (Below Average)"
+    },
+    "paymentBreakdown": {
+      "principalInterest": "Principal & Interest",
+      "propertyTax": "Property Tax",
+      "homeInsurance": "Home Insurance",
+      "pmi": "PMI",
+      "loanAmount": "Loan Amount",
+      "totalInterest": "Total Interest",
+      "totalCost": "Total Cost"
+    },
+    "pmiWarning": "Note: Less than 20% down payment may require PMI",
+    "getEstimateButton": "Get My Home Loan Estimate"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "reset": "Reset",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "continue": "Continue",
+    "finish": "Finish",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK"
+  },
+  "benefits": {
+    "hero": {
+      "title": "Refinance Benefits",
+      "subtitle": "Comprehensive coverage benefits that provide peace of mind on the road",
+      "getCoverage": "Get Coverage Today"
+    },
+    "intro": {
+      "title": "Drive with Confidence",
+      "description": "Your vehicle can be unpredictable — and so can the coverage you think you have. Since the post-COVID chip shortage, many dealerships reduced their stock and stopped properly certifying vehicles. That means thousands of drivers are paying for certified coverage through third-party providers without their vehicle actually being on the dealer's paperwork. Apex Auto Solutions helps you understand what you're really covered for and provides true, verified protection that picks up where your manufacturer warranty leaves off."
+    },
+    "section": {
+      "title": "Comprehensive Coverage Benefits",
+      "subtitle": "Complete protection for every aspect of your vehicle ownership"
+    },
+    "benefits": [
+      {
+        "title": "Roadside Assistance",
+        "description": "24/7 protection with comprehensive roadside assistance coverage.",
+        "features": ["Towing services", "Jump starts", "Flat tire changes", "Lockout service", "Up to $100 reimbursement"]
+      },
+      {
+        "title": "Road Hazard Coverage",
+        "description": "Protection for tire damage from road hazards with generous reimbursement limits.",
+        "features": ["$400 maximum benefit", "Tire repair coverage", "Replacement coverage", "Public roadway hazards", "Up to $100 per tire"]
+      },
+      {
+        "title": "Rental Car Reimbursement",
+        "description": "Get back on the road quickly with rental car coverage during repairs.",
+        "features": ["$30 per day coverage", "Up to $150 per occurrence", "All program types", "Quick processing", "Flexible terms"]
+      },
+      {
+        "title": "Trip Interruption",
+        "description": "Added protection for overnight stays when stranded far from home.",
+        "features": ["$75 per day reimbursement", "Up to 3 days coverage", "100+ miles from home", "Any hotel choice", "Meal coverage included"]
+      },
+      {
+        "title": "Maintenance Benefits",
+        "description": "Keep your vehicle in top condition with comprehensive maintenance coverage.",
+        "features": ["Oil changes included", "Brake pad coverage", "Battery replacement", "Cooling system maintenance", "Free safety inspection"]
+      },
+      {
+        "title": "Extended Protection",
+        "description": "True coverage that fills the gaps left by recent dealership certification changes — verified protection that extends well beyond your manufacturer warranty.",
+        "features": ["Customizable plans", "Beyond warranty limits", "Financial security", "Verified vehicle certification", "Peace of mind"]
+      }
+    ],
+    "cta": {
+      "title": "Ready to Protect Your Investment?",
+      "subtitle": "Join thousands of satisfied customers who trust Apex Auto Solutions for their vehicle coverage needs.",
+      "getCoverage": "Get Your Coverage Today",
+      "learnMore": "Learn More About Services"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Apex Auto Solutions",
+      "subtitle": "Your trusted partner in automotive financing for over a decade. We're dedicated to providing unparalleled service and expertise to our clients nationwide.",
+      "getQuote": "Get Your Quote",
+      "contactTeam": "Contact Our Team"
+    },
+    "trusted": "Trusted & Recognized",
+    "featured": "As featured in leading financial publications",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide accessible, transparent, and competitive auto financing solutions that help individuals and businesses achieve their transportation goals while building lasting relationships based on trust and exceptional service.",
+      "description2": "We are dedicated to providing unparalleled service and expertise to our clients nationwide. Our team of experienced professionals works tirelessly to understand your unique financial needs and tailor solutions that exceed your expectations."
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "Leading the way in automotive financial solutions since 2012",
+      "paragraph1": "Founded in 2012, Apex Auto Solutions began with a simple vision: to make auto financing accessible and transparent for everyone. What started as a small team of finance professionals has grown into a trusted name in the automotive lending industry.",
+      "paragraph2": "We recognized that traditional lending institutions often made the financing process complicated and intimidating. Our founders set out to change that by creating a customer-first approach that prioritizes clarity, competitive rates, and exceptional service.",
+      "paragraph3": "Today, we've helped thousands of customers secure financing for their dream vehicles, from first-time buyers to seasoned car enthusiasts. Our commitment to innovation and customer satisfaction continues to drive our growth and success."
+    },
+    "statistics": {
+      "title": "By the Numbers",
+      "customersServed": "Customers Served",
+      "yearsInBusiness": "Years in Business", 
+      "averageSavings": "Average Savings",
+      "customerSatisfaction": "Customer Satisfaction"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do",
+      "transparency": {
+        "title": "Transparency",
+        "description": "Clear, honest communication with no hidden fees or surprises. We believe in complete transparency throughout the entire process."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "Fast approvals and quick processing to get you on the road sooner. Our streamlined processes ensure you don't wait unnecessarily."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We work with you to find the best solution for your unique situation. Your success is our success, and we're committed to your financial well-being."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Commitment to the highest standards in everything we do. We continuously improve our services to exceed your expectations."
+      }
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "Experienced professionals dedicated to your success",
+      "michael": {
+        "title": "CEO & Founder",
+        "description": "15+ years in automotive finance, passionate about customer success and financial empowerment."
+      },
+      "sarah": {
+        "title": "VP of Operations",
+        "description": "Expert in loan processing and customer relationship management with a focus on operational excellence."
+      },
+      "david": {
+        "title": "Head of Technology",
+        "description": "Leading our digital transformation and customer experience initiatives to make financing more accessible."
+      }
+    },
+    "cta": {
+      "title": "Ready to Work With Us?",
+      "subtitle": "Experience the Apex Auto Solutions difference. Get your personalized quote today.",
+      "getQuote": "Get Your Quote",
+      "contactTeam": "Contact Our Team"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "Privacy Policy",
+      "subtitle": "Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use our services."
+    },
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "content": "When you interact with Apex Auto Solutions, we may collect the following types of information: Personal Information (Name, email address, phone number, mailing address, and other contact details), Financial Information (Loan details, vehicle information, credit score if applicable, and refinancing preferences), and Technical Data (IP address, browser type, device information, and website usage data collected through cookies and analytics tools)."
+      },
+      {
+        "title": "How We Use Your Information",
+        "content": "We use your information to: Process and evaluate your auto refinancing application; Provide customer support and respond to inquiries; Improve our website, services, and customer experience; Send updates, offers, and promotional materials (you may opt out at any time); Comply with legal and regulatory requirements."
+      },
+      {
+        "title": "Information Sharing & Disclosure",
+        "content": "We do not sell, rent, or trade your personal information. However, we may share your data with: Lenders and Financial Institutions to process your auto refinancing request; Service Providers (third-party vendors who assist with business operations, such as payment processing and marketing); Legal & Regulatory Authorities if required by law or to protect our rights and prevent fraud. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties."
+      },
+      {
+        "title": "Data Security",
+        "content": "We implement industry-standard security measures to protect your personal and financial information from unauthorized access, use, or disclosure. However, no online transmission is 100% secure, and we encourage users to protect their credentials."
+      },
+      {
+        "title": "Your Rights & Choices",
+        "content": "You have the right to: Access, update, or correct your personal information; Request deletion of your data (subject to legal retention requirements); Opt out of marketing communications at any time. To exercise your rights, please contact us."
+      },
+      {
+        "title": "Cookies & Tracking Technologies",
+        "content": "Our website may use cookies and similar tracking technologies to enhance user experience and analyze website traffic. You can manage cookie preferences in your browser settings."
+      },
+      {
+        "title": "Third-Party Links",
+        "content": "Our website may contain links to third-party websites. We are not responsible for their privacy practices and encourage you to review their policies before sharing your information."
+      },
+      {
+        "title": "Updates to This Privacy Policy",
+        "content": "We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated effective date."
+      }
+    ],
+    "contact": {
+      "title": "Contact Information",
+      "subtitle": "If you have any questions about this Privacy Policy or our privacy practices, please contact us:",
+      "email": "Email",
+      "phone": "Phone",
+      "website": "Website"
+    },
+    "lastUpdated": "Last Updated:"
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "subtitle": "Please read these terms carefully before using our services. By accessing our website, you agree to be bound by these terms.",
+    "sections": [
+      {
+        "title": "Acceptance of Terms",
+        "content": "By accessing and using this website and our auto loan refinance services, you accept and agree to be bound by the terms and provision of this agreement."
+      },
+      {
+        "title": "Information Sharing & Disclosure",
+        "content": "We do not sell, rent, or trade your personal information. However, we may share your data with lenders and financial institutions to process your auto refinancing request, service providers (third-party vendors who assist with business operations), and legal & regulatory authorities if required by law or to protect our rights and prevent fraud. All categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties."
+      },
+      {
+        "title": "Data Security",
+        "content": "We implement industry-standard security measures to protect your personal and financial information from unauthorized access, use, or disclosure. However, no online transmission is 100% secure, and we encourage users to protect their credentials."
+      },
+      {
+        "title": "Your Rights & Choices",
+        "content": "You have the right to access, update, or correct your personal information; request deletion of your data (subject to legal retention requirements); and opt out of marketing communications at any time. To exercise your rights, please contact us."
+      },
+      {
+        "title": "Cookies & Tracking Technologies",
+        "content": "Our website may use cookies and similar tracking technologies to enhance user experience and analyze website traffic. You can manage cookie preferences in your browser settings."
+      },
+      {
+        "title": "Third-Party Links",
+        "content": "Our website may contain links to third-party websites. We are not responsible for their privacy practices and encourage you to review their policies before sharing your information."
+      },
+      {
+        "title": "Updates to This Policy",
+        "content": "We may update this policy periodically. Any changes will be posted on this page with an updated effective date."
+      },
+      {
+        "title": "Modifications to Terms",
+        "content": "Apex Auto Solutions may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
+      },
+      {
+        "title": "Governing Law",
+        "content": "These terms and conditions are governed by and construed in accordance with the laws of the United States and you irrevocably submit to the exclusive jurisdiction of the courts in that state or location."
+      }
+    ],
+    "contact": {
+      "title": "Contact Information",
+      "subtitle": "If you have any questions about these Terms and Conditions, please contact us:",
+      "email": "Email",
+      "phone": "Phone",
+      "website": "Website"
+    }
+  }
+}
