@@ -42,10 +42,10 @@ function CalculatorContent() {
       <Navigation overlay />
       
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/auto/loan3.jpg"
+            src="/auto/car-loan3.jpg"
             alt="Financial calculator tools"
             fill
             sizes="100vw"
@@ -105,7 +105,7 @@ function CalculatorContent() {
             variants={staggerChildren}
             className="text-center mb-8"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl font-bold text-gray-900 mb-4 font-saira">
+            <motion.h2 variants={fadeInUp} className="text-4xl text-gray-900 mb-4">
               {calculatorType === 'auto' ? ts('navigation.autoLoanCalculator') : ts('navigation.homeLoanCalculator')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">

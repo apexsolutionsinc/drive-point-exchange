@@ -143,7 +143,7 @@ export default function Contact() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/auto/car-loan3.jpg"
+            src="/auto/loan3.jpg"
             alt="Contact us for auto financing"
             fill
             sizes="100vw"
@@ -202,7 +202,7 @@ export default function Contact() {
             variants={fadeInLeft}
             className="bg-white rounded-2xl shadow-lg shadow-blue-500/5 p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-saira">{ts('contact.sendMessage')}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 ">{ts('contact.sendMessage')}</h2>
             
             {isSubmitted ? (
               <motion.div
@@ -418,7 +418,7 @@ export default function Contact() {
           variants={staggerChildren}
           className="mt-16"
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-gray-900 text-center mb-12 font-saira">
+          <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-gray-900 text-center mb-12 ">
             {ts('contact.faq')}
           </motion.h2>
           <motion.div variants={staggerChildren} className="grid grid-cols-1 md:grid-cols-2 gap-8">
