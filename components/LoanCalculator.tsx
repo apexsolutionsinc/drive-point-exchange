@@ -373,7 +373,7 @@ export default function LoanCalculator() {
       ) : (
       <div className="w-full">
         <div className="text-center mb-6">
-          <h2 className="font-saira text-2xl font-bold text-[#0a1628] mb-2">
+          <h2 className="text-2xl text-[#0a1628] mb-2">
             {ts('calculator.title')}
           </h2>
           <p className="text-base text-dpe-slate">

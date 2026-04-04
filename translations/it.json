@@ -332,7 +332,10 @@
     "hero": {
       "title": "Vantaggi di Rifinanziamento",
       "subtitle": "Vantaggi di copertura completa che offrono tranquillità sulla strada",
-      "getCoverage": "Ottieni Copertura Oggi"
+      "getCoverage": "Ottieni Copertura Oggi",
+      "badge": "Protezione e Sicurezza",
+      "titleLine1": "Senza Compromessi",
+      "titleLine2": "Benefici della Copertura"
     },
     "intro": {
       "title": "Guida con Fiducia",
@@ -340,38 +343,75 @@
     },
     "section": {
       "title": "Vantaggi di Copertura Completa",
-      "subtitle": "Protezione completa per ogni aspetto della proprietà del tuo veicolo"
+      "subtitle": "Protezione completa per ogni aspetto della proprietà del tuo veicolo",
+      "countLabel": "CARATTERISTICHE COPERTURA"
     },
     "benefits": [
       {
         "title": "Assistenza Stradale",
         "description": "Protezione 24/7 con copertura completa di assistenza stradale.",
-        "features": ["Servizi di rimorchio", "Avvii", "Cambio pneumatici", "Servizio sblocco", "Fino a $100 rimborso"]
+        "features": [
+          "Servizi di rimorchio",
+          "Avvii",
+          "Cambio pneumatici",
+          "Servizio sblocco",
+          "Fino a $100 rimborso"
+        ]
       },
       {
         "title": "Copertura Rischi Stradali",
         "description": "Protezione per danni ai pneumatici da rischi stradali con limiti di rimborso generosi.",
-        "features": ["Beneficio massimo $400", "Copertura riparazione pneumatici", "Copertura sostituzione", "Rischi strade pubbliche", "Fino a $100 per pneumatico"]
+        "features": [
+          "Beneficio massimo $400",
+          "Copertura riparazione pneumatici",
+          "Copertura sostituzione",
+          "Rischi strade pubbliche",
+          "Fino a $100 per pneumatico"
+        ]
       },
       {
         "title": "Rimborso Auto a Noleggio",
         "description": "Torna rapidamente sulla strada con copertura auto a noleggio durante le riparazioni.",
-        "features": ["Copertura $30 al giorno", "Fino a $150 per occorrenza", "Tutti i tipi di programma", "Elaborazione rapida", "Termini flessibili"]
+        "features": [
+          "Copertura $30 al giorno",
+          "Fino a $150 per occorrenza",
+          "Tutti i tipi di programma",
+          "Elaborazione rapida",
+          "Termini flessibili"
+        ]
       },
       {
         "title": "Interruzione Viaggio",
         "description": "Protezione aggiuntiva per pernottamenti quando sei bloccato lontano da casa.",
-        "features": ["Rimborso $75 al giorno", "Fino a 3 giorni di copertura", "100+ miglia da casa", "Qualsiasi scelta hotel", "Copertura pasti inclusa"]
+        "features": [
+          "Rimborso $75 al giorno",
+          "Fino a 3 giorni di copertura",
+          "100+ miglia da casa",
+          "Qualsiasi scelta hotel",
+          "Copertura pasti inclusa"
+        ]
       },
       {
         "title": "Vantaggi Manutenzione",
         "description": "Mantieni il tuo veicolo in condizioni ottimali con copertura manutenzione completa.",
-        "features": ["Cambi olio inclusi", "Copertura pastiglie freni", "Sostituzione batteria", "Manutenzione sistema raffreddamento", "Ispezione sicurezza gratuita"]
+        "features": [
+          "Cambi olio inclusi",
+          "Copertura pastiglie freni",
+          "Sostituzione batteria",
+          "Manutenzione sistema raffreddamento",
+          "Ispezione sicurezza gratuita"
+        ]
       },
       {
         "title": "Protezione Estesa",
         "description": "Copertura vera che colma le lacune lasciate dai recenti cambiamenti nelle certificazioni delle concessionarie — protezione verificata che si estende ben oltre la tua garanzia del produttore.",
-        "features": ["Piani personalizzabili", "Oltre i limiti garanzia", "Sicurezza finanziaria", "Certificazione veicolo verificata", "Tranquillità"]
+        "features": [
+          "Piani personalizzabili",
+          "Oltre i limiti garanzia",
+          "Sicurezza finanziaria",
+          "Certificazione veicolo verificata",
+          "Tranquillità"
+        ]
       }
     ],
     "cta": {
@@ -565,7 +605,15 @@
     "title": "Calcolatore Prestito Casa",
     "subtitle": "Calcola i tuoi pagamenti mensili di mutuo ed esplora le opzioni di finanziamento immobiliare",
     "loanDetails": "Dettagli Prestito",
-    "paymentBreakdown": "Scomposizione Pagamento",
+    "paymentBreakdown": {
+      "principalInterest": "Capitale e Interesse",
+      "propertyTax": "Imposta Proprietà",
+      "homeInsurance": "Assicurazione Casa",
+      "pmi": "PMI",
+      "loanAmount": "Importo Prestito",
+      "totalInterest": "Interesse Totale",
+      "totalCost": "Costo Totale"
+    },
     "homePrice": "Prezzo Casa",
     "downPayment": "Anticipo",
     "loanTerm": "Durata Prestito",
@@ -593,15 +641,6 @@
       "fair": "6.5% (Credito Discreto)",
       "average": "7.0% (Credito Medio)",
       "belowAverage": "7.5% (Sotto la Media)"
-    },
-    "paymentBreakdown": {
-      "principalInterest": "Capitale e Interesse",
-      "propertyTax": "Imposta Proprietà",
-      "homeInsurance": "Assicurazione Casa",
-      "pmi": "PMI",
-      "loanAmount": "Importo Prestito",
-      "totalInterest": "Interesse Totale",
-      "totalCost": "Costo Totale"
     },
     "pmiWarning": "Nota: Un anticipo inferiore al 20% potrebbe richiedere PMI",
     "getEstimateButton": "Ottieni la Mia Stima Prestito Casa"
@@ -654,6 +693,23 @@
       "subtitle": "Contattaci oggi per saperne di più sui nostri servizi e come possiamo aiutarti a raggiungere i tuoi obiettivi finanziari.",
       "contactUs": "Contattaci",
       "getQuote": "Ottieni la Tua Offerta"
+    },
+    "hub": {
+      "badge": "Suite Finanziaria Premium",
+      "heroTitle1": "Eleva Il Tuo",
+      "heroTitle2": "Orizzonte Finanziario",
+      "heroSubtitle": "Scopri una selezione curata di soluzioni personalizzate per proteggere i tuoi asset, ottimizzare la liquidità e alimentare una crescita illimitata.",
+      "ctaTitle1": "Pronto a prendere il",
+      "ctaTitle2": "posto del guidatore?",
+      "ctaSubtitle": "Connettiti con i nostri consulenti per creare una strategia finanziaria personalizzata su misura per le tue ambizioni.",
+      "ctaButton": "Prenota Consulenza",
+      "categories": {
+        "autoRefinance": "Rifinanziamento Auto",
+        "coverage": "Copertura e Protezione",
+        "homeLoans": "Mutui Casa",
+        "consulting": "Consulenza",
+        "financial": "Finanziario"
+      }
     }
   },
   "common": {

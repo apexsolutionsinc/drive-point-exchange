@@ -332,7 +332,10 @@
     "hero": {
       "title": "Korzyści Refinansowania",
       "subtitle": "Kompleksowe korzyści pokrycia zapewniające spokój na drodze",
-      "getCoverage": "Uzyskaj Pokrycie Dziś"
+      "getCoverage": "Uzyskaj Pokrycie Dziś",
+      "badge": "Ochrona i Bezpieczeństwo",
+      "titleLine1": "Niezrównana",
+      "titleLine2": "Korzyści z Ochrony"
     },
     "intro": {
       "title": "Jedź z Pewnością",
@@ -340,38 +343,75 @@
     },
     "section": {
       "title": "Kompleksowe Korzyści Pokrycia",
-      "subtitle": "Kompletna ochrona dla każdego aspektu posiadania pojazdu"
+      "subtitle": "Kompletna ochrona dla każdego aspektu posiadania pojazdu",
+      "countLabel": "FUNKCJE OCHRONY"
     },
     "benefits": [
       {
         "title": "Pomoc Drogowa",
         "description": "Ochrona 24/7 z kompleksowym pokryciem pomocy drogowej.",
-        "features": ["Usługi holowania", "Rozruchy", "Zmiana opon", "Usługa odblokowania", "Do 100$ zwrotu"]
+        "features": [
+          "Usługi holowania",
+          "Rozruchy",
+          "Zmiana opon",
+          "Usługa odblokowania",
+          "Do 100$ zwrotu"
+        ]
       },
       {
         "title": "Pokrycie Zagrożeń Drogowych",
         "description": "Ochrona przed uszkodzeniami opon z zagrożeń drogowych z hojnymi limitami zwrotu.",
-        "features": ["Maksymalna korzyść 400$", "Pokrycie naprawy opon", "Pokrycie wymiany", "Zagrożenia dróg publicznych", "Do 100$ za oponę"]
+        "features": [
+          "Maksymalna korzyść 400$",
+          "Pokrycie naprawy opon",
+          "Pokrycie wymiany",
+          "Zagrożenia dróg publicznych",
+          "Do 100$ za oponę"
+        ]
       },
       {
         "title": "Zwrot Samochodu Wypożyczonego",
         "description": "Wróć szybko na drogę z pokryciem samochodu wypożyczonego podczas napraw.",
-        "features": ["Pokrycie 30$ dziennie", "Do 150$ za zdarzenie", "Wszystkie typy programów", "Szybkie przetwarzanie", "Elastyczne warunki"]
+        "features": [
+          "Pokrycie 30$ dziennie",
+          "Do 150$ za zdarzenie",
+          "Wszystkie typy programów",
+          "Szybkie przetwarzanie",
+          "Elastyczne warunki"
+        ]
       },
       {
         "title": "Przerwanie Podróży",
         "description": "Dodatkowa ochrona na noclegi gdy jesteś uwięziony daleko od domu.",
-        "features": ["Zwrot 75$ dziennie", "Do 3 dni pokrycia", "100+ mil od domu", "Dowolny wybór hotelu", "Pokrycie posiłków wliczone"]
+        "features": [
+          "Zwrot 75$ dziennie",
+          "Do 3 dni pokrycia",
+          "100+ mil od domu",
+          "Dowolny wybór hotelu",
+          "Pokrycie posiłków wliczone"
+        ]
       },
       {
         "title": "Korzyści Konserwacji",
         "description": "Utrzymuj swój pojazd w doskonałym stanie z kompleksowym pokryciem konserwacji.",
-        "features": ["Wymiana oleju wliczona", "Pokrycie klocków hamulcowych", "Wymiana baterii", "Konserwacja systemu chłodzenia", "Bezpłatna kontrola bezpieczeństwa"]
+        "features": [
+          "Wymiana oleju wliczona",
+          "Pokrycie klocków hamulcowych",
+          "Wymiana baterii",
+          "Konserwacja systemu chłodzenia",
+          "Bezpłatna kontrola bezpieczeństwa"
+        ]
       },
       {
         "title": "Rozszerzona Ochrona",
         "description": "Prawdziwe pokrycie wypełniające luki po ostatnich zmianach w certyfikacji salonów — zweryfikowana ochrona wykraczająca daleko poza Twoją gwarancję producenta.",
-        "features": ["Plany dostosowywalne", "Poza limitami gwarancji", "Bezpieczeństwo finansowe", "Zweryfikowana certyfikacja pojazdu", "Spokój ducha"]
+        "features": [
+          "Plany dostosowywalne",
+          "Poza limitami gwarancji",
+          "Bezpieczeństwo finansowe",
+          "Zweryfikowana certyfikacja pojazdu",
+          "Spokój ducha"
+        ]
       }
     ],
     "cta": {
@@ -565,7 +605,15 @@
     "title": "Kalkulator Kredytu Mieszkaniowego",
     "subtitle": "Oblicz swoje miesięczne płatności hipoteczne i poznaj opcje finansowania mieszkaniowego",
     "loanDetails": "Szczegóły Kredytu",
-    "paymentBreakdown": "Rozbicie Płatności",
+    "paymentBreakdown": {
+      "principalInterest": "Kapitał i Odsetki",
+      "propertyTax": "Podatek Od Nieruchomości",
+      "homeInsurance": "Ubezpieczenie Mieszkania",
+      "pmi": "PMI",
+      "loanAmount": "Kwota Kredytu",
+      "totalInterest": "Całkowite Odsetki",
+      "totalCost": "Całkowity Koszt"
+    },
     "homePrice": "Cena Mieszkania",
     "downPayment": "Wkład Własny",
     "loanTerm": "Okres Kredytu",
@@ -593,15 +641,6 @@
       "fair": "6.5% (Przeciętna Zdolność Kredytowa)",
       "average": "7.0% (Średnia Zdolność Kredytowa)",
       "belowAverage": "7.5% (Poniżej Średniej)"
-    },
-    "paymentBreakdown": {
-      "principalInterest": "Kapitał i Odsetki",
-      "propertyTax": "Podatek Od Nieruchomości",
-      "homeInsurance": "Ubezpieczenie Mieszkania",
-      "pmi": "PMI",
-      "loanAmount": "Kwota Kredytu",
-      "totalInterest": "Całkowite Odsetki",
-      "totalCost": "Całkowity Koszt"
     },
     "pmiWarning": "Uwaga: Wkład własny poniżej 20% może wymagać PMI",
     "getEstimateButton": "Uzyskaj Moją Wycenę Kredytu Mieszkaniowego"
@@ -654,6 +693,23 @@
       "subtitle": "Skontaktuj się z nami dzisiaj, aby dowiedzieć się więcej o naszych usługach i jak możemy pomóc Ci osiągnąć Twoje cele finansowe.",
       "contactUs": "Skontaktuj się z Nami",
       "getQuote": "Uzyskaj Swoją Wycenę"
+    },
+    "hub": {
+      "badge": "Pakiet Finansowy Premium",
+      "heroTitle1": "Wznieś Swój",
+      "heroTitle2": "Finansowy Horyzont",
+      "heroSubtitle": "Odkryj starannie wyselekcjonowane rozwiązania zaprojektowane, aby chronić Twoje aktywa, optymalizować płynność i napędzać nieograniczony wzrost.",
+      "ctaTitle1": "Gotowy, aby zająć",
+      "ctaTitle2": "miejsce kierowcy?",
+      "ctaSubtitle": "Skontaktuj się z naszymi doradcami, aby stworzyć spersonalizowany plan finansowy dostosowany do Twoich ambicji.",
+      "ctaButton": "Zaplanuj Konsultację",
+      "categories": {
+        "autoRefinance": "Refinansowanie Auto",
+        "coverage": "Ochrona i Ubezpieczenie",
+        "homeLoans": "Kredyty Hipoteczne",
+        "consulting": "Doradztwo",
+        "financial": "Finansowy"
+      }
     }
   },
   "common": {

@@ -383,6 +383,23 @@
       "subtitle": "Contact us today to learn more about our services and how we can help you achieve your financial goals.",
       "contactUs": "Contact Us",
       "getQuote": "Get Your Quote"
+    },
+    "hub": {
+      "badge": "Premium Financial Suite",
+      "heroTitle1": "Elevate Your",
+      "heroTitle2": "Financial Horizon",
+      "heroSubtitle": "Discover a curated selection of tailored solutions designed to safeguard your assets, optimize liquidity, and ignite limitless growth.",
+      "ctaTitle1": "Ready to take the",
+      "ctaTitle2": "driver's seat?",
+      "ctaSubtitle": "Connect with our elite advisors to curate a bespoke financial roadmap tailored exactly to your ambitions.",
+      "ctaButton": "Schedule Consultation",
+      "categories": {
+        "autoRefinance": "Auto Refinance",
+        "coverage": "Coverage & Protection",
+        "homeLoans": "Home Loans",
+        "consulting": "Consulting",
+        "financial": "Financial"
+      }
     }
   },
   "homeLoanCalculator": {
@@ -451,7 +468,10 @@
     "hero": {
       "title": "Refinance Benefits",
       "subtitle": "Comprehensive coverage benefits that provide peace of mind on the road",
-      "getCoverage": "Get Coverage Today"
+      "getCoverage": "Get Coverage Today",
+      "badge": "Protection & Security",
+      "titleLine1": "Uncompromising",
+      "titleLine2": "Coverage Benefits"
     },
     "intro": {
       "title": "Drive with Confidence",
@@ -459,38 +479,75 @@
     },
     "section": {
       "title": "Comprehensive Coverage Benefits",
-      "subtitle": "Complete protection for every aspect of your vehicle ownership"
+      "subtitle": "Complete protection for every aspect of your vehicle ownership",
+      "countLabel": "COVERAGE FEATURES"
     },
     "benefits": [
       {
         "title": "Roadside Assistance",
         "description": "24/7 protection with comprehensive roadside assistance coverage.",
-        "features": ["Towing services", "Jump starts", "Flat tire changes", "Lockout service", "Up to $100 reimbursement"]
+        "features": [
+          "Towing services",
+          "Jump starts",
+          "Flat tire changes",
+          "Lockout service",
+          "Up to $100 reimbursement"
+        ]
       },
       {
         "title": "Road Hazard Coverage",
         "description": "Protection for tire damage from road hazards with generous reimbursement limits.",
-        "features": ["$400 maximum benefit", "Tire repair coverage", "Replacement coverage", "Public roadway hazards", "Up to $100 per tire"]
+        "features": [
+          "$400 maximum benefit",
+          "Tire repair coverage",
+          "Replacement coverage",
+          "Public roadway hazards",
+          "Up to $100 per tire"
+        ]
       },
       {
         "title": "Rental Car Reimbursement",
         "description": "Get back on the road quickly with rental car coverage during repairs.",
-        "features": ["$30 per day coverage", "Up to $150 per occurrence", "All program types", "Quick processing", "Flexible terms"]
+        "features": [
+          "$30 per day coverage",
+          "Up to $150 per occurrence",
+          "All program types",
+          "Quick processing",
+          "Flexible terms"
+        ]
       },
       {
         "title": "Trip Interruption",
         "description": "Added protection for overnight stays when stranded far from home.",
-        "features": ["$75 per day reimbursement", "Up to 3 days coverage", "100+ miles from home", "Any hotel choice", "Meal coverage included"]
+        "features": [
+          "$75 per day reimbursement",
+          "Up to 3 days coverage",
+          "100+ miles from home",
+          "Any hotel choice",
+          "Meal coverage included"
+        ]
       },
       {
         "title": "Maintenance Benefits",
         "description": "Keep your vehicle in top condition with comprehensive maintenance coverage.",
-        "features": ["Oil changes included", "Brake pad coverage", "Battery replacement", "Cooling system maintenance", "Free safety inspection"]
+        "features": [
+          "Oil changes included",
+          "Brake pad coverage",
+          "Battery replacement",
+          "Cooling system maintenance",
+          "Free safety inspection"
+        ]
       },
       {
         "title": "Extended Protection",
         "description": "True coverage that fills the gaps left by recent dealership certification changes — verified protection that extends well beyond your manufacturer warranty.",
-        "features": ["Customizable plans", "Beyond warranty limits", "Financial security", "Verified vehicle certification", "Peace of mind"]
+        "features": [
+          "Customizable plans",
+          "Beyond warranty limits",
+          "Financial security",
+          "Verified vehicle certification",
+          "Peace of mind"
+        ]
       }
     ],
     "cta": {
@@ -524,7 +581,7 @@
     "statistics": {
       "title": "By the Numbers",
       "customersServed": "Customers Served",
-      "yearsInBusiness": "Years in Business", 
+      "yearsInBusiness": "Years in Business",
       "averageSavings": "Average Savings",
       "customerSatisfaction": "Customer Satisfaction"
     },

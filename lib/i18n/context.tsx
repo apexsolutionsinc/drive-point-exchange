@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode, useSyncExternalStore } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useSyncExternalStore } from 'react';
 import { getTranslations } from './translations';
 
 export type Language = 'en' | 'es' | 'pl' | 'it' | 'fr';
@@ -58,10 +58,14 @@ export function I18nProvider({ children }: I18nProviderProps) {
     () => false
   );
 
-  // Initialize with saved language or default
-  const [language, setLanguageState] = useState<Language>(() => {
-    return getSavedLanguage() || DEFAULT_LANGUAGE;
-  });
+  // Always start with default to avoid SSR/client mismatch
+  const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
+
+  // Load saved language from localStorage after hydration
+  useEffect(() => {
+    const saved = getSavedLanguage();
+    if (saved) setLanguageState(saved);
+  }, []);
 
   // Get translations for current language
   const translations = getTranslations(language);

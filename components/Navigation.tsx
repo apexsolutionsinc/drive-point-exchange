@@ -82,11 +82,11 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/logo.png"
+                src="/logo-no bg.png"
                 alt="Drive Point Exchange Logo"
                 width={200}
                 height={80}
-                className={`h-14 w-auto mix-blend-multiply`}
+                className={`h-20 w-auto mix-blend-multiply`}
                 priority
               />
             </Link>
@@ -98,7 +98,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
               {/* Home Link */}
               <Link
                 href={navItems[0].href}
-                className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
+                className={`text-gray-500 hover:text-dpe-blue px-3 py-2 text-base font-normal transition-colors`}
               >
                 {navItems[0].label}
               </Link>
@@ -110,7 +110,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsServicesOpen(false))}
                   aria-expanded={isServicesOpen}
                   aria-haspopup="true"
-                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-500 hover:text-dpe-blue px-3 py-2 text-base font-normal transition-colors flex items-center`}
                 >
                   {ts('navigation.services')}
                   <svg className="ml-1 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
+                  className={`text-gray-500 hover:text-dpe-blue px-3 py-2 text-base font-normal transition-colors`}
                 >
                   {item.label}
                 </Link>
@@ -153,7 +153,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsCalculatorOpen(false))}
                   aria-expanded={isCalculatorOpen}
                   aria-haspopup="true"
-                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-500 hover:text-dpe-blue px-3 py-2 text-base font-normal transition-colors flex items-center`}
                 >
                   {ts('navigation.calculators')}
                   <svg className="ml-1 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,7 +185,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsLanguageOpen(false))}
                   aria-expanded={isLanguageOpen}
                   aria-haspopup="true"
-                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-500 hover:text-dpe-blue px-3 py-2 text-base font-normal transition-colors flex items-center`}
                 >
                   <span className="mr-2">{currentLanguage?.flag}</span>
                   <span className="hidden sm:inline">{currentLanguage?.nativeName}</span>
@@ -296,7 +296,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-xl">
             <Link
               href={navItems[0].href}
-              className="text-gray-600 hover:text-dpe-blue hover:bg-gray-100 block px-3 py-2 rounded-md text-lg font-medium transition-colors"
+              className="text-gray-500 hover:text-dpe-blue hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-normal transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {navItems[0].label}
@@ -321,7 +321,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-600 hover:text-dpe-blue hover:bg-gray-100 block px-3 py-2 rounded-md text-lg font-medium transition-colors"
+                className="text-gray-500 hover:text-dpe-blue hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-normal transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -335,7 +335,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-600 hover:text-dpe-blue hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors ml-4"
+                  className="text-gray-500 hover:text-dpe-blue hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-normal transition-colors ml-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

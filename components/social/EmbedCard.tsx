@@ -283,7 +283,7 @@ function FallbackCard({ post }: { post: SocialPost }) {
         className="w-12 h-12 rounded-full mx-auto mb-4"
         style={{ backgroundColor: config.color }}
       />
-      <h3 className="font-saira font-bold text-[#0a1628] mb-2">{config.label}</h3>
+      <h3 className="text-[#0a1628] mb-2">{config.label}</h3>
       {post.caption && (
         <p className="text-sm text-dpe-slate mb-4 line-clamp-2">{post.caption}</p>
       )}

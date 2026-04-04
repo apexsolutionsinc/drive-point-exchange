@@ -177,7 +177,7 @@ export default function EmailModal({
   const formContent = (
     <>
       <div className="text-center mb-6">
-        <h2 id="modal-title" className="font-saira text-2xl font-bold text-[#0a1628] mb-2">
+        <h2 id="modal-title" className="text-2xl text-[#0a1628] mb-2">
           Get Your FREE {calculatorType === 'home' ? 'Home Loan' : 'Auto Loan'} Quote
         </h2>
         <p className="text-base text-dpe-slate">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Saira, Outfit, Geist } from "next/font/google";
+import { Raleway, Outfit, Geist } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "../lib/i18n/context";
 import { Analytics } from "@vercel/analytics/next";
@@ -8,15 +8,15 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { ConsentScripts } from "@/components/ConsentScripts";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const saira = Saira({
+const playfair = Raleway({
   subsets: ["latin"],
   variable: "--font-saira",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["700", "800"],
 });
 
 const outfit = Outfit({
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description: "Get instant auto loan estimates with state-specific tax calculations. Competitive rates, fast approval, and exceptional service. Auto refinancing and comprehensive vehicle coverage.",
   keywords: [
     "auto loans",
-    "car financing", 
+    "car financing",
     "vehicle loans",
     "auto financing",
     "car loans",
@@ -154,7 +154,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#0D1B4A" />
       </head>
-      <body className={`${saira.variable} ${outfit.variable} font-outfit antialiased`}>
+      <body className={`${playfair.variable} ${outfit.variable} font-outfit antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dpe-navy focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold focus:text-sm focus:ring-2 focus:ring-dpe-blue focus:outline-none"

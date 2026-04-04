@@ -47,10 +47,10 @@ export default function SocialFeed() {
     <section className="py-20 bg-[#f8fafc]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-saira text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4 tracking-wide">
+          <h2 className="text-3xl sm:text-4xl text-[#0a1628] mb-3">
             Follow Our Journey
           </h2>
-          <p className="text-lg text-dpe-slate">
+          <p className="text-base text-dpe-slate font-light">
             Latest from our social channels
           </p>
         </div>

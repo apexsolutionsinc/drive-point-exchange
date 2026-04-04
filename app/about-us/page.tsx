@@ -151,7 +151,7 @@ export default function AboutUs() {
             </motion.div>
             
             <motion.div variants={fadeInRight}>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 font-saira">{ts('about.mission.title')}</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 ">{ts('about.mission.title')}</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
                 {ts('about.mission.description')}
               </p>
@@ -173,7 +173,7 @@ export default function AboutUs() {
             variants={staggerChildren}
             className="text-center mb-16"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 font-saira">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 ">
               {ts('about.story.title')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600">
@@ -239,7 +239,7 @@ export default function AboutUs() {
             variants={staggerChildren}
             className="text-center mb-16"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 font-saira">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 ">
               {ts('about.values.title')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600">
@@ -284,7 +284,7 @@ export default function AboutUs() {
             variants={staggerChildren}
             className="text-center mb-16"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 font-saira">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 ">
               {ts('about.team.title')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600">
@@ -331,7 +331,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             variants={staggerChildren}
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-white mb-6 font-saira">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-white mb-6 ">
               {ts('about.cta.title')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-blue-100 mb-8">

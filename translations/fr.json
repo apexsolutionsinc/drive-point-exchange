@@ -332,7 +332,10 @@
     "hero": {
       "title": "Avantages de Refinancement",
       "subtitle": "Avantages de couverture complète qui offrent la tranquillité d'esprit sur la route",
-      "getCoverage": "Obtenir Couverture Aujourd'hui"
+      "getCoverage": "Obtenir Couverture Aujourd'hui",
+      "badge": "Protection et Sécurité",
+      "titleLine1": "Sans Compromis",
+      "titleLine2": "Avantages de Couverture"
     },
     "intro": {
       "title": "Conduisez avec Confiance",
@@ -340,38 +343,75 @@
     },
     "section": {
       "title": "Avantages de Couverture Complète",
-      "subtitle": "Protection complète pour chaque aspect de la propriété de votre véhicule"
+      "subtitle": "Protection complète pour chaque aspect de la propriété de votre véhicule",
+      "countLabel": "CARACTÉRISTIQUES DE COUVERTURE"
     },
     "benefits": [
       {
         "title": "Assistance Routière",
         "description": "Protection 24/7 avec couverture complète d'assistance routière.",
-        "features": ["Services de remorquage", "Démarrages", "Changements de pneus", "Service de serrure", "Jusqu'à 100$ de remboursement"]
+        "features": [
+          "Services de remorquage",
+          "Démarrages",
+          "Changements de pneus",
+          "Service de serrure",
+          "Jusqu'à 100$ de remboursement"
+        ]
       },
       {
         "title": "Couverture Risques Routiers",
         "description": "Protection contre les dommages de pneus dus aux risques routiers avec des limites de remboursement généreuses.",
-        "features": ["Bénéfice maximum de 400$", "Couverture réparation pneus", "Couverture remplacement", "Risques routes publiques", "Jusqu'à 100$ par pneu"]
+        "features": [
+          "Bénéfice maximum de 400$",
+          "Couverture réparation pneus",
+          "Couverture remplacement",
+          "Risques routes publiques",
+          "Jusqu'à 100$ par pneu"
+        ]
       },
       {
         "title": "Remboursement Voiture de Location",
         "description": "Remettez-vous rapidement sur la route avec une couverture voiture de location pendant les réparations.",
-        "features": ["Couverture 30$ par jour", "Jusqu'à 150$ par occurrence", "Tous types de programmes", "Traitement rapide", "Conditions flexibles"]
+        "features": [
+          "Couverture 30$ par jour",
+          "Jusqu'à 150$ par occurrence",
+          "Tous types de programmes",
+          "Traitement rapide",
+          "Conditions flexibles"
+        ]
       },
       {
         "title": "Interruption de Voyage",
         "description": "Protection supplémentaire pour les séjours nocturnes quand vous êtes bloqué loin de chez vous.",
-        "features": ["Remboursement 75$ par jour", "Jusqu'à 3 jours de couverture", "Plus de 100 miles de chez vous", "Choix d'hôtel libre", "Couverture repas incluse"]
+        "features": [
+          "Remboursement 75$ par jour",
+          "Jusqu'à 3 jours de couverture",
+          "Plus de 100 miles de chez vous",
+          "Choix d'hôtel libre",
+          "Couverture repas incluse"
+        ]
       },
       {
         "title": "Avantages Entretien",
         "description": "Gardez votre véhicule en parfait état avec une couverture d'entretien complète.",
-        "features": ["Vidanges incluses", "Couverture plaquettes de frein", "Remplacement batterie", "Entretien système de refroidissement", "Inspection sécurité gratuite"]
+        "features": [
+          "Vidanges incluses",
+          "Couverture plaquettes de frein",
+          "Remplacement batterie",
+          "Entretien système de refroidissement",
+          "Inspection sécurité gratuite"
+        ]
       },
       {
         "title": "Protection Étendue",
         "description": "Couverture vraie qui comble les lacunes laissées par les récents changements de certification des concessionnaires — protection vérifiée qui s'étend bien au-delà de votre garantie constructeur.",
-        "features": ["Plans personnalisables", "Au-delà des limites garantie", "Sécurité financière", "Certification véhicule vérifiée", "Tranquillité d'esprit"]
+        "features": [
+          "Plans personnalisables",
+          "Au-delà des limites garantie",
+          "Sécurité financière",
+          "Certification véhicule vérifiée",
+          "Tranquillité d'esprit"
+        ]
       }
     ],
     "cta": {
@@ -565,7 +605,15 @@
     "title": "Calculateur de Prêt Immobilier",
     "subtitle": "Calculez vos paiements mensuels d'hypothèque et explorez les options de financement immobilier",
     "loanDetails": "Détails du Prêt",
-    "paymentBreakdown": "Répartition du Paiement",
+    "paymentBreakdown": {
+      "principalInterest": "Principal et Intérêt",
+      "propertyTax": "Taxe Foncière",
+      "homeInsurance": "Assurance Habitation",
+      "pmi": "PMI",
+      "loanAmount": "Montant du Prêt",
+      "totalInterest": "Intérêt Total",
+      "totalCost": "Coût Total"
+    },
     "homePrice": "Prix de la Maison",
     "downPayment": "Mise de Fond",
     "loanTerm": "Durée du Prêt",
@@ -593,15 +641,6 @@
       "fair": "6.5% (Crédit Correct)",
       "average": "7.0% (Crédit Moyen)",
       "belowAverage": "7.5% (En Dessous de la Moyenne)"
-    },
-    "paymentBreakdown": {
-      "principalInterest": "Principal et Intérêt",
-      "propertyTax": "Taxe Foncière",
-      "homeInsurance": "Assurance Habitation",
-      "pmi": "PMI",
-      "loanAmount": "Montant du Prêt",
-      "totalInterest": "Intérêt Total",
-      "totalCost": "Coût Total"
     },
     "pmiWarning": "Note : Un acompte inférieur à 20% peut nécessiter un PMI",
     "getEstimateButton": "Obtenir Mon Estimation de Prêt Immobilier"
@@ -654,6 +693,23 @@
       "subtitle": "Contactez-nous aujourd'hui pour en savoir plus sur nos services et comment nous pouvons vous aider à atteindre vos objectifs financiers.",
       "contactUs": "Nous Contacter",
       "getQuote": "Obtenir Votre Devis"
+    },
+    "hub": {
+      "badge": "Suite Financière Premium",
+      "heroTitle1": "Élevez Votre",
+      "heroTitle2": "Horizon Financier",
+      "heroSubtitle": "Découvrez une sélection de solutions sur mesure pour protéger vos actifs, optimiser la liquidité et stimuler une croissance illimitée.",
+      "ctaTitle1": "Prêt à prendre le",
+      "ctaTitle2": "volant?",
+      "ctaSubtitle": "Connectez-vous avec nos conseillers pour créer une feuille de route financière sur mesure adaptée à vos ambitions.",
+      "ctaButton": "Planifier une Consultation",
+      "categories": {
+        "autoRefinance": "Refinancement Auto",
+        "coverage": "Couverture et Protection",
+        "homeLoans": "Prêts Immobiliers",
+        "consulting": "Conseil",
+        "financial": "Financier"
+      }
     }
   },
   "common": {

@@ -71,8 +71,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
-        saira: ['var(--font-saira)', 'Saira', 'system-ui', 'sans-serif'],
-        display: ['var(--font-saira)', 'Saira', 'system-ui', 'sans-serif'],
+        saira: ['var(--font-saira)', 'Playfair Display', 'Georgia', 'serif'],
+        display: ['var(--font-saira)', 'Playfair Display', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'hero-pattern': "url('/hero-bg.jpg')",

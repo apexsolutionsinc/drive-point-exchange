@@ -41,7 +41,7 @@ export function CookieConsent() {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border border-gray-200 p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex-1">
-            <h2 className="font-saira font-bold text-gray-900 text-lg mb-1">
+            <h2 className="text-lg text-gray-900 mb-1">
               We value your privacy
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed">

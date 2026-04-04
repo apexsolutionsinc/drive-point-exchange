@@ -332,7 +332,10 @@
     "hero": {
       "title": "Beneficios de Refinanciamiento",
       "subtitle": "Beneficios de cobertura integral que brindan tranquilidad en el camino",
-      "getCoverage": "Obtener Cobertura Hoy"
+      "getCoverage": "Obtener Cobertura Hoy",
+      "badge": "Protección y Seguridad",
+      "titleLine1": "Sin Compromisos",
+      "titleLine2": "Beneficios de Cobertura"
     },
     "intro": {
       "title": "Conduce con Confianza",
@@ -340,38 +343,75 @@
     },
     "section": {
       "title": "Beneficios de Cobertura Integral",
-      "subtitle": "Protección completa para cada aspecto de la propiedad de tu vehículo"
+      "subtitle": "Protección completa para cada aspecto de la propiedad de tu vehículo",
+      "countLabel": "FUNCIONES DE COBERTURA"
     },
     "benefits": [
       {
         "title": "Asistencia en Carretera",
         "description": "Protección 24/7 con cobertura integral de asistencia en carretera.",
-        "features": ["Servicios de grúa", "Arranques", "Cambios de llanta", "Servicio de cerradura", "Hasta $100 de reembolso"]
+        "features": [
+          "Servicios de grúa",
+          "Arranques",
+          "Cambios de llanta",
+          "Servicio de cerradura",
+          "Hasta $100 de reembolso"
+        ]
       },
       {
         "title": "Cobertura de Riesgos de Carretera",
         "description": "Protección para daños de llantas por riesgos de carretera con límites generosos de reembolso.",
-        "features": ["Beneficio máximo de $400", "Cobertura de reparación de llantas", "Cobertura de reemplazo", "Riesgos de carreteras públicas", "Hasta $100 por llanta"]
+        "features": [
+          "Beneficio máximo de $400",
+          "Cobertura de reparación de llantas",
+          "Cobertura de reemplazo",
+          "Riesgos de carreteras públicas",
+          "Hasta $100 por llanta"
+        ]
       },
       {
         "title": "Reembolso de Auto de Renta",
         "description": "Vuelve al camino rápidamente con cobertura de auto de renta durante reparaciones.",
-        "features": ["Cobertura de $30 por día", "Hasta $150 por ocurrencia", "Todos los tipos de programa", "Procesamiento rápido", "Términos flexibles"]
+        "features": [
+          "Cobertura de $30 por día",
+          "Hasta $150 por ocurrencia",
+          "Todos los tipos de programa",
+          "Procesamiento rápido",
+          "Términos flexibles"
+        ]
       },
       {
         "title": "Interrupción de Viaje",
         "description": "Protección adicional para estadías nocturnas cuando estés varado lejos de casa.",
-        "features": ["Reembolso de $75 por día", "Hasta 3 días de cobertura", "Más de 100 millas de casa", "Cualquier elección de hotel", "Cobertura de comidas incluida"]
+        "features": [
+          "Reembolso de $75 por día",
+          "Hasta 3 días de cobertura",
+          "Más de 100 millas de casa",
+          "Cualquier elección de hotel",
+          "Cobertura de comidas incluida"
+        ]
       },
       {
         "title": "Beneficios de Mantenimiento",
         "description": "Mantén tu vehículo en excelente condición con cobertura integral de mantenimiento.",
-        "features": ["Cambios de aceite incluidos", "Cobertura de pastillas de freno", "Reemplazo de batería", "Mantenimiento del sistema de enfriamiento", "Inspección de seguridad gratuita"]
+        "features": [
+          "Cambios de aceite incluidos",
+          "Cobertura de pastillas de freno",
+          "Reemplazo de batería",
+          "Mantenimiento del sistema de enfriamiento",
+          "Inspección de seguridad gratuita"
+        ]
       },
       {
         "title": "Protección Extendida",
         "description": "Cobertura verdadera que llena los vacíos dejados por los cambios recientes en las certificaciones de concesionarios — protección verificada que se extiende mucho más allá de tu garantía del fabricante.",
-        "features": ["Planes personalizables", "Más allá de los límites de garantía", "Seguridad financiera", "Certificación vehicular verificada", "Tranquilidad"]
+        "features": [
+          "Planes personalizables",
+          "Más allá de los límites de garantía",
+          "Seguridad financiera",
+          "Certificación vehicular verificada",
+          "Tranquilidad"
+        ]
       }
     ],
     "cta": {
@@ -565,7 +605,15 @@
     "title": "Calculadora de Préstamo de Casa",
     "subtitle": "Calcula tus pagos mensuales de hipoteca y explora opciones de financiamiento inmobiliario",
     "loanDetails": "Detalles del Préstamo",
-    "paymentBreakdown": "Desglose de Pago",
+    "paymentBreakdown": {
+      "principalInterest": "Principal e Interés",
+      "propertyTax": "Impuesto Predial",
+      "homeInsurance": "Seguro de Casa",
+      "pmi": "PMI",
+      "loanAmount": "Monto del Préstamo",
+      "totalInterest": "Interés Total",
+      "totalCost": "Costo Total"
+    },
     "homePrice": "Precio de la Casa",
     "downPayment": "Pago Inicial",
     "loanTerm": "Plazo del Préstamo",
@@ -593,15 +641,6 @@
       "fair": "6.5% (Crédito Regular)",
       "average": "7.0% (Crédito Promedio)",
       "belowAverage": "7.5% (Por Debajo del Promedio)"
-    },
-    "paymentBreakdown": {
-      "principalInterest": "Principal e Interés",
-      "propertyTax": "Impuesto Predial",
-      "homeInsurance": "Seguro de Casa",
-      "pmi": "PMI",
-      "loanAmount": "Monto del Préstamo",
-      "totalInterest": "Interés Total",
-      "totalCost": "Costo Total"
     },
     "pmiWarning": "Nota: Un pago inicial menor al 20% puede requerir PMI",
     "getEstimateButton": "Obtener Mi Estimación de Préstamo de Casa"
@@ -654,6 +693,23 @@
       "subtitle": "Contáctanos hoy para aprender más sobre nuestros servicios y cómo podemos ayudarte a alcanzar tus objetivos financieros.",
       "contactUs": "Contáctanos",
       "getQuote": "Obtener Tu Cotización"
+    },
+    "hub": {
+      "badge": "Suite Financiera Premium",
+      "heroTitle1": "Eleva Tu",
+      "heroTitle2": "Horizonte Financiero",
+      "heroSubtitle": "Descubre una selección curada de soluciones personalizadas para proteger tus activos, optimizar la liquidez e impulsar un crecimiento ilimitado.",
+      "ctaTitle1": "Listo para tomar el",
+      "ctaTitle2": "asiento del conductor?",
+      "ctaSubtitle": "Conecta con nuestros asesores de élite para crear un plan financiero personalizado adaptado a tus ambiciones.",
+      "ctaButton": "Programar Consulta",
+      "categories": {
+        "autoRefinance": "Refinanciamiento Auto",
+        "coverage": "Cobertura y Protección",
+        "homeLoans": "Préstamos de Casa",
+        "consulting": "Consultoría",
+        "financial": "Financiero"
+      }
     }
   },
   "common": {
