@@ -5,7 +5,9 @@ import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import ShaderBackground from './ui/shader-background';
+import dynamic from 'next/dynamic';
+
+const ShaderBackground = dynamic(() => import('./ui/shader-background'), { ssr: false });
 import { CTAButton } from './ui/cta-button';
 
 interface ServiceLayoutProps {

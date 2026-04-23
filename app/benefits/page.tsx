@@ -8,7 +8,9 @@ import { useI18n } from '../../lib/i18n/context';
 import { SparksCarousel, SparkItem } from '../../components/ui/sparks-carousel';
 import { ShieldCheck } from 'lucide-react';
 import { CTAButton } from '../../components/ui/cta-button';
-import ShaderBackground from '../../components/ui/shader-background';
+import dynamic from 'next/dynamic';
+
+const ShaderBackground = dynamic(() => import('../../components/ui/shader-background'), { ssr: false });
 
 interface BenefitItem {
   title: string;

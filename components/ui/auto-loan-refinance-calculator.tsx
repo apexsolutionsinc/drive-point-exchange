@@ -7,7 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { RotateCcw } from "lucide-react";
-import EmailModal from "@/components/calculator/EmailModal";
+import dynamic from "next/dynamic";
+
+const EmailModal = dynamic(() => import("@/components/calculator/EmailModal"), { ssr: false });
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);

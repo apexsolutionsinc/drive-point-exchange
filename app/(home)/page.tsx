@@ -3,16 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
-import { AutoLoanRefinanceCalculator } from '../../components/ui/auto-loan-refinance-calculator';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
-import TrustpilotReviews from '../../components/TrustpilotReviews';
-import SocialFeed from '../../components/SocialFeed';
-import ShaderBackground from '../../components/ui/shader-background';
 import { GradientText } from '../../components/ui/gradient-text';
 import { CTAButton } from '../../components/ui/cta-button';
+
+const AutoLoanRefinanceCalculator = dynamic(
+  () => import('../../components/ui/auto-loan-refinance-calculator').then(m => m.AutoLoanRefinanceCalculator),
+  { ssr: false }
+);
+const ShaderBackground = dynamic(() => import('../../components/ui/shader-background'), { ssr: false });
+const TrustpilotReviews = dynamic(() => import('../../components/TrustpilotReviews'), { ssr: false });
+const SocialFeed = dynamic(() => import('../../components/SocialFeed'), { ssr: false });
 
 const heroCtaWords = [
   { label: "Start Today", href: "/contact" },
@@ -294,7 +299,6 @@ export default function Home() {
                   fill
                   sizes="(min-width: 1280px) 1200px, 100vw"
                   className="object-cover"
-                  priority
                 />
                 {/* Dark vignette */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0A1340]/90 via-[#0A1340]/50 to-transparent" />
