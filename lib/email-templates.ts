@@ -3,7 +3,6 @@ type EmailTone = 'default' | 'subtle' | 'brand' | 'alert';
 type EmailLayoutOptions = {
   title: string;
   subtitle?: string;
-  eyebrow?: string;
   intro?: string[];
   sections?: string[];
   footerLines?: string[];
@@ -104,7 +103,6 @@ function getHighlightClass(tone: EmailHighlightTone): string {
 export function renderEmailLayout({
   title,
   subtitle,
-  eyebrow,
   intro = [],
   sections = [],
   footerLines = [],
@@ -170,20 +168,6 @@ export function renderEmailLayout({
       padding: 32px 28px;
       text-align: center;
       background: linear-gradient(135deg, ${EMAIL_BRAND.colors.navyDeep} 0%, ${EMAIL_BRAND.colors.navy} 58%, ${EMAIL_BRAND.colors.blue} 100%);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(45, 184, 67, 0.35);
-      background: rgba(45, 184, 67, 0.12);
-      color: ${EMAIL_BRAND.colors.greenLight};
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .logo-wrap {
@@ -439,7 +423,6 @@ export function renderEmailLayout({
   <div class="shell">
     <div class="card">
       <div class="hero">
-        <div class="hero-badge">${escapeHtml(eyebrow || EMAIL_BRAND.companyName)}</div>
         <div class="logo-wrap">
           <img class="logo" src="${EMAIL_BRAND.logoUrl}" alt="${EMAIL_BRAND.companyName} logo">
         </div>
