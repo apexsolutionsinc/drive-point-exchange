@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+
+const FRAME_INTERVAL = 1000 / 30;
 
 const shaderSource = `#version 300 es
 precision highp float;
@@ -59,8 +61,22 @@ void main(void) {
 
 export function NebulaBg({ className = '' }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -70,6 +86,7 @@ export function NebulaBg({ className = '' }: { className?: string }) {
     const vs = gl.createShader(gl.VERTEX_SHADER)!;
     gl.shaderSource(vs, `#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}`);
     gl.compileShader(vs);
+    if (!gl.getShaderParameter(vs, gl.COMPILE_STATUS)) return;
 
     const fs = gl.createShader(gl.FRAGMENT_SHADER)!;
     gl.shaderSource(fs, shaderSource);
@@ -95,7 +112,7 @@ export function NebulaBg({ className = '' }: { className?: string }) {
     const uTime = gl.getUniformLocation(program, 'time');
 
     const resize = () => {
-      const dpr = Math.max(1, 0.5 * window.devicePixelRatio);
+      const dpr = 0.35;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -105,14 +122,19 @@ export function NebulaBg({ className = '' }: { className?: string }) {
     window.addEventListener('resize', resize);
 
     let animId: number;
+    let lastFrame = 0;
     const render = (now: number) => {
+      animId = requestAnimationFrame(render);
+      if (document.hidden) return;
+      if (now - lastFrame < FRAME_INTERVAL) return;
+      lastFrame = now;
+
       gl.clearColor(0, 0, 0, 1);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.useProgram(program);
       gl.uniform2f(uRes, canvas.width, canvas.height);
       gl.uniform1f(uTime, now * 1e-3);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      animId = requestAnimationFrame(render);
     };
     animId = requestAnimationFrame(render);
 
@@ -121,13 +143,17 @@ export function NebulaBg({ className = '' }: { className?: string }) {
       cancelAnimationFrame(animId);
       gl.deleteProgram(program);
     };
-  }, []);
+  }, [isVisible]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`absolute inset-0 w-full h-full touch-none ${className}`}
-      style={{ background: 'black' }}
-    />
+    <div ref={containerRef} className={`absolute inset-0 w-full h-full ${className}`}>
+      {isVisible && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full touch-none"
+          style={{ background: 'black' }}
+        />
+      )}
+    </div>
   );
 }

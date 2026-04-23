@@ -214,7 +214,7 @@ export function AutoLoanRefinanceCalculator() {
           </div>
           <button
             onClick={() => setShowQuoteForm(true)}
-            className="green-cta-pulse h-12 md:h-14 rounded-full text-white font-bold px-8 text-base md:text-lg whitespace-nowrap shadow-lg"
+            className="hidden sm:block green-cta-pulse h-12 md:h-14 rounded-full text-white font-bold px-8 text-base md:text-lg whitespace-nowrap shadow-lg"
           >
             Get My Refinance Quote
           </button>
@@ -329,6 +329,12 @@ export function AutoLoanRefinanceCalculator() {
                 </CardContent>
               </Card>
 
+              <button
+                onClick={() => setShowQuoteForm(true)}
+                className="sm:hidden green-cta-pulse h-12 rounded-full text-white font-bold px-8 text-base whitespace-nowrap shadow-lg w-full"
+              >
+                Get My Refinance Quote
+              </button>
               <Button
                 variant="secondary"
                 onClick={resetCalculator}

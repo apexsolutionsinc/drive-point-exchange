@@ -33,6 +33,8 @@ export function HyperText({
   const [trigger, setTrigger] = useState(false);
   const interations = useRef(0);
   const isFirstRender = useRef(true);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   const triggerAnimation = () => {
     interations.current = 0;
@@ -40,7 +42,18 @@ export function HyperText({
   };
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsInView(true); },
+      { rootMargin: '100px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion || !isInView) return;
 
     const interval = setInterval(
       () => {
@@ -69,7 +82,7 @@ export function HyperText({
       duration / (text.length * 10),
     );
     return () => clearInterval(interval);
-  }, [text, duration, trigger, animateOnLoad, prefersReducedMotion]);
+  }, [text, duration, trigger, animateOnLoad, prefersReducedMotion, isInView]);
 
   if (prefersReducedMotion) {
     return (
@@ -88,6 +101,7 @@ export function HyperText({
 
   return (
     <div
+      ref={containerRef}
       className="flex scale-100 cursor-default overflow-hidden py-2"
       onMouseEnter={triggerAnimation}
     >

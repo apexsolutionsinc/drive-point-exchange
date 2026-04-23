@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
+const FRAME_INTERVAL = 1000 / 30;
+
 const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10" }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -187,7 +189,6 @@ const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10"
     };
 
     const resizeCanvas = () => {
-      // Changed to element dimensions so it can be absolute within a container
       canvas.width = canvas.parentElement ? canvas.parentElement.clientWidth : window.innerWidth;
       canvas.height = canvas.parentElement ? canvas.parentElement.clientHeight : window.innerHeight;
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -197,9 +198,15 @@ const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10"
     resizeCanvas();
 
     let animId: number;
+    let lastFrame = 0;
     const startTime = Date.now();
 
-    const render = () => {
+    const render = (now: number) => {
+      animId = requestAnimationFrame(render);
+      if (document.hidden) return;
+      if (now - lastFrame < FRAME_INTERVAL) return;
+      lastFrame = now;
+
       const currentTime = (Date.now() - startTime) / 1000;
 
       gl.clearColor(0, 0, 0, 1);
@@ -211,8 +218,6 @@ const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10"
       gl.vertexAttribPointer(programInfo.attribLocations.vertexPosition, 2, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-
-      animId = requestAnimationFrame(render);
     };
 
     animId = requestAnimationFrame(render);

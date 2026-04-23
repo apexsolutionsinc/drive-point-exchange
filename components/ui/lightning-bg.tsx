@@ -1,6 +1,8 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
+const FRAME_INTERVAL = 1000 / 30;
 
 interface LightningBgProps {
   hue?: number;
@@ -20,8 +22,22 @@ export function LightningBg({
   className = '',
 }: LightningBgProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -32,10 +48,11 @@ export function LightningBg({
       canvas.height = canvas.clientHeight;
     };
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
 
     const gl = canvas.getContext('webgl');
     if (!gl) return;
+
+    window.addEventListener('resize', resizeCanvas);
 
     const vertexShaderSource = `
       attribute vec2 aPosition;
@@ -163,7 +180,13 @@ export function LightningBg({
     const uSizeLoc = gl.getUniformLocation(program, 'uSize');
 
     const startTime = performance.now();
-    const render = () => {
+    let lastFrame = 0;
+    const render = (now: number) => {
+      animationId = requestAnimationFrame(render);
+      if (document.hidden) return;
+      if (now - lastFrame < FRAME_INTERVAL) return;
+      lastFrame = now;
+
       resizeCanvas();
       gl.viewport(0, 0, canvas.width, canvas.height);
       gl.uniform2f(iResolutionLoc, canvas.width, canvas.height);
@@ -174,7 +197,6 @@ export function LightningBg({
       gl.uniform1f(uIntensityLoc, intensity);
       gl.uniform1f(uSizeLoc, size);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      animationId = requestAnimationFrame(render);
     };
     animationId = requestAnimationFrame(render);
 
@@ -182,7 +204,11 @@ export function LightningBg({
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationId);
     };
-  }, [hue, xOffset, speed, intensity, size]);
+  }, [isVisible, hue, xOffset, speed, intensity, size]);
 
-  return <canvas ref={canvasRef} className={`w-full h-full ${className}`} />;
+  return (
+    <div ref={containerRef} className={`w-full h-full ${className}`}>
+      {isVisible && <canvas ref={canvasRef} className="w-full h-full" />}
+    </div>
+  );
 }
