@@ -54,7 +54,7 @@ export default function Benefits() {
       <Navigation overlay />
       
       {/* ─── PREMIUM HERO SECTION ─── */}
-      <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center pt-28">
+      <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center pt-28 overflow-hidden">
         {/* Abstract Dark Glowing Background */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -72,7 +72,7 @@ export default function Benefits() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center">
           <motion.div initial="initial" animate="animate" variants={containerVariants} className="max-w-4xl">
 
-            <motion.h1 variants={itemVariants} className="text-5xl sm:text-6xl md:text-7xl text-white mb-8 leading-[0.95]">
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[0.95]">
               {ts('benefits.hero.titleLine1')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-indigo-400">
                 {ts('benefits.hero.titleLine2')}
@@ -145,7 +145,7 @@ export default function Benefits() {
               viewport={{ once: true }}
               variants={containerVariants}
             >
-              <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl text-white mb-6">
+              <motion.h2 variants={itemVariants} className="text-3xl sm:text-5xl md:text-7xl text-white mb-6">
                  {ts('benefits.cta.title')}
               </motion.h2>
               <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto font-light">

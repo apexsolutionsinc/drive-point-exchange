@@ -1,13 +1,28 @@
 "use client";
 
 import * as React from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { RotateCcw } from "lucide-react";
 import EmailModal from "@/components/calculator/EmailModal";
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth < breakpoint : false
+  );
+  const check = useCallback(() => {
+    setIsMobile(window.innerWidth < breakpoint);
+  }, [breakpoint]);
+  useEffect(() => {
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [check]);
+  return isMobile;
+}
 
 type LoanInputs = {
   currentMonthlyPayment: number;
@@ -59,10 +74,34 @@ function parseNumberInput(value: string): number {
   return Number(value.replace(/,/g, ""));
 }
 
+type SliderConfig = {
+  key: keyof LoanInputs;
+  label: string[];
+  min: number;
+  max: number;
+  step: number;
+  prefix?: string;
+  suffix?: string;
+  inputWidth: string;
+  inputWidthSm: string;
+  format: (v: number) => string;
+  tooltipFormat: (v: number) => string;
+};
+
+const sliderConfigs: SliderConfig[] = [
+  { key: "currentMonthlyPayment", label: ["CURRENT", "MONTHLY", "PAYMENT"], min: 100, max: 2500, step: 5, prefix: "$", inputWidth: "w-14", inputWidthSm: "w-16", format: (v) => formatNumberWithCommas(v), tooltipFormat: (v) => `$${v}` },
+  { key: "loanBalanceRemaining", label: ["LOAN", "BALANCE", "REMAINING"], min: 1000, max: 100000, step: 100, prefix: "$", inputWidth: "w-20", inputWidthSm: "w-24", format: (v) => formatNumberWithCommas(v), tooltipFormat: (v) => `$${v.toLocaleString()}` },
+  { key: "currentAPR", label: ["CURRENT", "APR"], min: 0, max: 25, step: 0.1, suffix: "%", inputWidth: "w-10", inputWidthSm: "w-12", format: (v) => v.toFixed(1), tooltipFormat: (v) => `${v}%` },
+  { key: "newAPR", label: ["NEW", "APR"], min: 0, max: 25, step: 0.1, suffix: "%", inputWidth: "w-10", inputWidthSm: "w-12", format: (v) => v.toFixed(1), tooltipFormat: (v) => `${v}%` },
+  { key: "remainingTermYears", label: ["CURRENT", "TERM"], min: 1, max: 8, step: 1, suffix: "yr", inputWidth: "w-8", inputWidthSm: "w-10", format: (v) => v.toString(), tooltipFormat: (v) => `${v} YRS` },
+  { key: "newTermYears", label: ["NEW", "TERM"], min: 1, max: 8, step: 1, suffix: "yr", inputWidth: "w-8", inputWidthSm: "w-10", format: (v) => v.toString(), tooltipFormat: (v) => `${v} YRS` },
+];
+
 export function AutoLoanRefinanceCalculator() {
   const [values, setValues] = useState<LoanInputs>(defaultValues);
   const [displayValues, setDisplayValues] = useState<Partial<LoanInputs>>({});
   const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const isMobile = useIsMobile();
 
   const updateValue = <K extends keyof LoanInputs>(key: K, value: LoanInputs[K]) => {
     setValues((prev) => ({
@@ -185,201 +224,81 @@ export function AutoLoanRefinanceCalculator() {
         <div className="bg-white/85 backdrop-blur-xl rounded-b-3xl shadow-2xl border border-white/60 border-t-0 p-6 sm:p-10 relative z-0">
           <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1fr_minmax(280px,0.8fr)] auto-rows-max lg:auto-rows-fr">
             <div className="flex flex-col bg-transparent h-full">
-              <div className="flex flex-1 min-h-0 justify-between sm:justify-center gap-2 sm:gap-6 md:gap-10 lg:gap-14 w-full mt-2 mb-2">
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.currentMonthlyPayment]}
-                    min={100}
-                    max={2500}
-                    step={5}
-                    onValueChange={(value) => updateValue("currentMonthlyPayment", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="Current Monthly Payment"
-                    showTooltip
-                    tooltipContent={(val) => `$${val}`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">$</span>
-                      <input
-                        type="text"
-                        value={displayValues.currentMonthlyPayment !== undefined ? displayValues.currentMonthlyPayment : formatNumberWithCommas(values.currentMonthlyPayment)}
-                        onChange={(e) => handleInputChange("currentMonthlyPayment", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("currentMonthlyPayment")}
-                        className="w-14 sm:w-16 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
+              {isMobile ? (
+                /* ── Mobile: horizontal sliders stacked vertically ── */
+                <div className="flex flex-col gap-5 w-full py-2">
+                  {sliderConfigs.map((cfg) => (
+                    <div key={cfg.key} className="flex flex-col gap-2">
+                      <div className="flex items-center justify-between">
+                        <Label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                          {cfg.label.join(" ")}
+                        </Label>
+                        <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
+                          {cfg.prefix && <span className="text-sm font-extrabold text-slate-800">{cfg.prefix}</span>}
+                          <input
+                            type="text"
+                            value={displayValues[cfg.key] !== undefined ? displayValues[cfg.key] : cfg.format(values[cfg.key])}
+                            onChange={(e) => handleInputChange(cfg.key, e.target.value)}
+                            onFocus={(e) => e.target.select()}
+                            onBlur={() => handleInputBlur(cfg.key)}
+                            className={`${cfg.inputWidthSm} text-center text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0`}
+                          />
+                          {cfg.suffix && <span className="text-sm font-extrabold text-slate-800">{cfg.suffix}</span>}
+                        </div>
+                      </div>
+                      <Slider
+                        value={[values[cfg.key]]}
+                        min={cfg.min}
+                        max={cfg.max}
+                        step={cfg.step}
+                        onValueChange={(value) => updateValue(cfg.key, value[0])}
+                        orientation="horizontal"
+                        className="w-full"
+                        aria-label={cfg.label.join(" ")}
+                        showTooltip
+                        tooltipContent={cfg.tooltipFormat}
                       />
                     </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>CURRENT</span>
-                      <span>MONTHLY</span>
-                      <span>PAYMENT</span>
-                    </Label>
-                  </div>
+                  ))}
                 </div>
-
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.loanBalanceRemaining]}
-                    min={1000}
-                    max={100000}
-                    step={100}
-                    onValueChange={(value) => updateValue("loanBalanceRemaining", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="Loan Balance Remaining"
-                    showTooltip
-                    tooltipContent={(val) => `$${val.toLocaleString()}`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">$</span>
-                      <input
-                        type="text"
-                        value={displayValues.loanBalanceRemaining !== undefined ? displayValues.loanBalanceRemaining : formatNumberWithCommas(values.loanBalanceRemaining)}
-                        onChange={(e) => handleInputChange("loanBalanceRemaining", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("loanBalanceRemaining")}
-                        className="w-20 sm:w-24 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
+              ) : (
+                /* ── Desktop: vertical sliders side by side ── */
+                <div className="flex flex-1 min-h-0 justify-center gap-6 md:gap-10 lg:gap-14 w-full mt-2 mb-2">
+                  {sliderConfigs.map((cfg) => (
+                    <div key={cfg.key} className="flex flex-col items-center gap-3 h-full">
+                      <Slider
+                        value={[values[cfg.key]]}
+                        min={cfg.min}
+                        max={cfg.max}
+                        step={cfg.step}
+                        onValueChange={(value) => updateValue(cfg.key, value[0])}
+                        orientation="vertical"
+                        className="flex-1 min-h-0"
+                        aria-label={cfg.label.join(" ")}
+                        showTooltip
+                        tooltipContent={cfg.tooltipFormat}
                       />
+                      <div className="flex flex-col items-center h-20 justify-start">
+                        <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
+                          {cfg.prefix && <span className="text-xs sm:text-sm font-extrabold text-slate-800">{cfg.prefix}</span>}
+                          <input
+                            type="text"
+                            value={displayValues[cfg.key] !== undefined ? displayValues[cfg.key] : cfg.format(values[cfg.key])}
+                            onChange={(e) => handleInputChange(cfg.key, e.target.value)}
+                            onFocus={(e) => e.target.select()}
+                            onBlur={() => handleInputBlur(cfg.key)}
+                            className={`${cfg.inputWidth} sm:${cfg.inputWidthSm} text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0`}
+                          />
+                          {cfg.suffix && <span className="text-xs sm:text-sm font-extrabold text-slate-800">{cfg.suffix}</span>}
+                        </div>
+                        <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+                          {cfg.label.map((line) => <span key={line}>{line}</span>)}
+                        </Label>
+                      </div>
                     </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>LOAN</span>
-                      <span>BALANCE</span>
-                      <span>REMAINING</span>
-                    </Label>
-                  </div>
+                  ))}
                 </div>
-
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.currentAPR]}
-                    min={0}
-                    max={25}
-                    step={0.1}
-                    onValueChange={(value) => updateValue("currentAPR", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="Current APR"
-                    showTooltip
-                    tooltipContent={(val) => `${val}%`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <input
-                        type="text"
-                        value={displayValues.currentAPR !== undefined ? displayValues.currentAPR : values.currentAPR.toFixed(1)}
-                        onChange={(e) => handleInputChange("currentAPR", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("currentAPR")}
-                        className="w-10 sm:w-12 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
-                      />
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">%</span>
-                    </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>CURRENT</span>
-                      <span>APR</span>
-                    </Label>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.newAPR]}
-                    min={0}
-                    max={25}
-                    step={0.1}
-                    onValueChange={(value) => updateValue("newAPR", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="New APR"
-                    showTooltip
-                    tooltipContent={(val) => `${val}%`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <input
-                        type="text"
-                        value={displayValues.newAPR !== undefined ? displayValues.newAPR : values.newAPR.toFixed(1)}
-                        onChange={(e) => handleInputChange("newAPR", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("newAPR")}
-                        className="w-10 sm:w-12 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
-                      />
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">%</span>
-                    </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>NEW</span>
-                      <span>APR</span>
-                    </Label>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.remainingTermYears]}
-                    min={1}
-                    max={8}
-                    step={1}
-                    onValueChange={(value) => updateValue("remainingTermYears", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="Remaining Term"
-                    showTooltip
-                    tooltipContent={(val) => `${val} YRS`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <input
-                        type="text"
-                        value={displayValues.remainingTermYears !== undefined ? displayValues.remainingTermYears : values.remainingTermYears.toString()}
-                        onChange={(e) => handleInputChange("remainingTermYears", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("remainingTermYears")}
-                        className="w-8 sm:w-10 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
-                      />
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">yr</span>
-                    </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>CURRENT</span>
-                      <span>TERM</span>
-                    </Label>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center gap-3 h-full">
-                  <Slider
-                    value={[values.newTermYears]}
-                    min={1}
-                    max={8}
-                    step={1}
-                    onValueChange={(value) => updateValue("newTermYears", value[0])}
-                    orientation="vertical"
-                    className="flex-1 min-h-0"
-                    aria-label="New Term"
-                    showTooltip
-                    tooltipContent={(val) => `${val} YRS`}
-                  />
-                  <div className="flex flex-col items-center h-20 justify-start">
-                    <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
-                      <input
-                        type="text"
-                        value={displayValues.newTermYears !== undefined ? displayValues.newTermYears : values.newTermYears.toString()}
-                        onChange={(e) => handleInputChange("newTermYears", e.target.value)}
-                        onFocus={(e) => e.target.select()}
-                        onBlur={() => handleInputBlur("newTermYears")}
-                        className="w-8 sm:w-10 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
-                      />
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-800">yr</span>
-                    </div>
-                    <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                      <span>NEW</span>
-                      <span>TERM</span>
-                    </Label>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
 
             <div className="flex flex-col justify-center gap-4 lg:pl-6 lg:border-l lg:border-slate-200 h-full">

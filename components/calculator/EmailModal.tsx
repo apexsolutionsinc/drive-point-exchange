@@ -344,7 +344,7 @@ export default function EmailModal({
   }
 
   return (
-    <div className={`fixed inset-0 z-[9999] flex items-center justify-center ${className}`}>
+    <div className={`fixed inset-0 z-[9999] flex items-start pt-4 sm:items-center sm:pt-0 justify-center ${className}`}>
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
@@ -352,7 +352,8 @@ export default function EmailModal({
       />
       <div
         ref={modalRef}
-        className="relative bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto z-10 p-6"
+        className="relative bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 max-w-lg w-full mx-4 max-h-[85vh] overflow-y-auto z-10 p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]"
+        style={{ maxHeight: '85dvh' }}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
