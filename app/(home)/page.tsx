@@ -16,7 +16,6 @@ const AutoLoanRefinanceCalculator = dynamic(
   { ssr: false }
 );
 const ShaderBackground = dynamic(() => import('../../components/ui/shader-background'), { ssr: false });
-const TrustpilotReviews = dynamic(() => import('../../components/TrustpilotReviews'), { ssr: false });
 const SocialFeed = dynamic(() => import('../../components/SocialFeed'), { ssr: false });
 
 const heroCtaWords = [
@@ -377,19 +376,6 @@ export default function Home() {
             <motion.p variants={fadeInUp} className="text-lg text-slate-400 font-light">
               {ts('home.trust.subtitle')}
             </motion.p>
-          </motion.div>
-
-          {/* Trustpilot Reviews */}
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="mb-12 w-full flex justify-center"
-          >
-            <div className="w-full max-w-4xl">
-               <TrustpilotReviews />
-            </div>
           </motion.div>
 
         </div>

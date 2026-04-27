@@ -123,12 +123,6 @@ export function ConsentScripts() {
 
   return (
     <>
-      <Script
-        id="trustpilot-bootstrap"
-        src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-        strategy="lazyOnload"
-      />
-
       <Script id="gtm-consent-default" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
