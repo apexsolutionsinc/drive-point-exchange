@@ -93,6 +93,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
   const navItems = [
     { href: '/', label: ts('navigation.home') },
     { href: '/benefits', label: ts('navigation.benefits') },
+    { href: '/checkout', label: 'Checkout / Membresías' },
     { href: '/contact', label: ts('navigation.contact') },
   ];
 
@@ -182,6 +183,11 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   label: ts('navigation.benefits'),
                   href: '/benefits',
                   isActive: pathname === '/benefits',
+                },
+                {
+                  label: 'Checkout',
+                  href: '/checkout',
+                  isActive: pathname === '/checkout',
                 },
                 {
                   label: ts('navigation.contact'),
