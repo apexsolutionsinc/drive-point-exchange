@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Phone, Mail, Globe, CheckCircle2 } from 'lucide-react';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-import { trackLeadSubmitted } from '../../lib/gtm';
-import { useI18n } from '../../lib/i18n/context';
-import { CTAButton } from '../../components/ui/cta-button';
-import { SectionKicker } from '../../components/ui/section-kicker';
+import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { trackLeadSubmitted } from '@/lib/gtm';
+import { useI18n } from '@/lib/i18n/context';
+import { CTAButton } from '@/components/ui/cta-button';
+import { SectionKicker } from '@/components/ui/section-kicker';
 
 export default function Contact() {
   const prefersReducedMotion = useReducedMotion();
@@ -394,11 +394,13 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <Globe className="w-5 h-5 text-dpe-blue mr-4 shrink-0" strokeWidth={1.5} />
+                <div className="flex items-start">
+                  <MapPin className="w-5 h-5 text-dpe-blue mr-4 shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.address')}</p>
-                    <p className="text-gray-900 font-semibold">Nationwide Service</p>
+                    <p className="text-gray-900 font-semibold">North Michigan Business Center</p>
+                    <p className="text-gray-700 text-sm">205 North Michigan Avenue, Suite 810</p>
+                    <p className="text-gray-700 text-sm">Chicago, IL 60601, US</p>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode, useSyncExternalStore } from 'react';
-import { getTranslations } from './translations';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef, ReactNode } from 'react';
+import { getCachedTranslations, loadTranslations } from './translations';
 
 export type Language = 'en' | 'es' | 'pl' | 'it' | 'fr';
 
@@ -36,82 +36,82 @@ interface I18nProviderProps {
   children: ReactNode;
 }
 
-// Subscribe to nothing - we only need the snapshot
-const emptySubscribe = () => () => {};
-
-// Helper to get saved language from localStorage
 function getSavedLanguage(): Language | null {
   if (typeof window !== 'undefined') {
     const saved = localStorage.getItem('apex-language') as Language;
-    if (saved && LANGUAGES.some(lang => lang.code === saved)) {
-      return saved;
-    }
+    if (saved && LANGUAGES.some(lang => lang.code === saved)) return saved;
   }
   return null;
 }
 
+function lookup(key: string, translations: Record<string, unknown>, params?: Record<string, string | number>): unknown {
+  const keys = key.split('.');
+  let value: unknown = translations;
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = (value as Record<string, unknown>)[k];
+    } else {
+      console.warn(`Translation key not found: ${key}`);
+      return key;
+    }
+  }
+  if (typeof value === 'string' && params) {
+    return value.replace(/\{(\w+)\}/g, (_, paramKey) => params[paramKey]?.toString() || _);
+  }
+  return value;
+}
+
 export function I18nProvider({ children }: I18nProviderProps) {
-  // Use useSyncExternalStore to safely detect hydration
-  const isClient = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
-
-  // Always start with default to avoid SSR/client mismatch
   const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
+  const [translations, setTranslations] = useState(() => getCachedTranslations(DEFAULT_LANGUAGE)!);
+  const isLoaded = useRef(false);
 
-  // Load saved language from localStorage after hydration
   useEffect(() => {
     const saved = getSavedLanguage();
-    if (saved) setLanguageState(saved);
-  }, []);
-
-  // Get translations for current language
-  const translations = getTranslations(language);
-
-  const setLanguage = (newLanguage: Language) => {
-    setLanguageState(newLanguage);
-    if (isClient) {
-      localStorage.setItem('apex-language', newLanguage);
-    }
-  };
-
-  const t = (key: string, params?: Record<string, string | number>): unknown => {
-    const keys = key.split('.');
-    let value: unknown = translations;
-
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = (value as Record<string, unknown>)[k];
+    if (saved) {
+      setLanguageState(saved);
+      const cached = getCachedTranslations(saved);
+      if (cached) {
+        setTranslations(cached);
       } else {
-        console.warn(`Translation key not found: ${key}`);
-        return key; // Return the key if translation not found
+        loadTranslations(saved).then(setTranslations);
       }
     }
+    isLoaded.current = true;
+  }, []);
 
-    // Replace parameters in the translation string if it's a string
-    if (typeof value === 'string' && params) {
-      return value.replace(/\{(\w+)\}/g, (match, paramKey) => {
-        return params[paramKey]?.toString() || match;
-      });
+  useEffect(() => {
+    const cached = getCachedTranslations(language);
+    if (cached) {
+      setTranslations(cached);
+    } else {
+      loadTranslations(language).then(setTranslations);
     }
+  }, [language]);
 
-    return value;
-  };
+  const setLanguage = useCallback((newLanguage: Language) => {
+    setLanguageState(newLanguage);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('apex-language', newLanguage);
+    }
+  }, []);
 
-  const ts = (key: string, params?: Record<string, string | number>): string => {
-    const result = t(key, params);
+  const t = useCallback((key: string, params?: Record<string, string | number>) => {
+    return lookup(key, translations, params);
+  }, [translations]);
+
+  const ts = useCallback((key: string, params?: Record<string, string | number>) => {
+    const result = lookup(key, translations, params);
     return typeof result === 'string' ? result : key;
-  };
+  }, [translations]);
 
-  const value: I18nContextType = {
+  const value = useMemo<I18nContextType>(() => ({
     language,
     setLanguage,
     t,
     ts,
     languages: LANGUAGES,
-  };
+  }), [language, setLanguage, t, ts]);
 
   return (
     <I18nContext.Provider value={value}>
@@ -128,19 +128,13 @@ export function useI18n(): I18nContextType {
   return context;
 }
 
-// Utility function to get language-specific locale
 export function getLanguageLocale(language: Language): string {
   const localeMap: Record<Language, string> = {
-    en: 'en-US',
-    es: 'es-ES',
-    pl: 'pl-PL',
-    it: 'it-IT',
-    fr: 'fr-FR',
+    en: 'en-US', es: 'es-ES', pl: 'pl-PL', it: 'it-IT', fr: 'fr-FR',
   };
   return localeMap[language];
 }
 
-// Utility function to get language-specific HTML lang attribute
 export function getLanguageAttribute(language: Language): string {
   return language;
 }

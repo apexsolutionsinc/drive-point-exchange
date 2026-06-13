@@ -12,6 +12,14 @@ export function getLocalBusinessSchema() {
     url: BASE_URL,
     telephone: '+1-888-351-0782',
     email: 'support@drivepointexchange.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '205 North Michigan Avenue, Suite 810',
+      addressLocality: 'Chicago',
+      addressRegion: 'IL',
+      postalCode: '60601',
+      addressCountry: 'US',
+    },
     areaServed: {
       '@type': 'Country',
       name: 'United States',

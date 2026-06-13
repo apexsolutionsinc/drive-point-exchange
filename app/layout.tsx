@@ -90,7 +90,7 @@ export default function RootLayout({
   const localBusinessData = getLocalBusinessSchema();
 
   return (
-    <html lang="en-US" className="font-sans">
+    <html lang="en-US">
       <head>
         <link rel="preload" as="font" type="font/woff2" href="/fonts/satoshi/Satoshi-Regular.woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/satoshi/Satoshi-Bold.woff2" crossOrigin="anonymous" />

@@ -1,50 +1,51 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-import { useI18n } from '../../lib/i18n/context';
-import { SectionKicker } from '../../components/ui/section-kicker';
-import { WordRotate } from '../../components/ui/word-rotate';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useInView, useReducedMotion } from 'framer-motion';
+import Navigation from '@/components/Navigation';
+import { CarBrandMarquee } from '@/components/CarBrandMarquee';
+import Footer from '@/components/Footer';
+import { useI18n } from '@/lib/i18n/context';
+import { SectionKicker } from '@/components/ui/section-kicker';
+import { WordRotate } from '@/components/ui/word-rotate';
+import { MoneyIcon, ShieldIcon, HomeIcon, ExchangeIcon, HeartIcon, ChartIcon, ArrowIcon } from '@/components/ui/icons';
 
 const AutoLoanRefinanceCalculator = dynamic(
-  () => import('../../components/ui/auto-loan-refinance-calculator').then(m => m.AutoLoanRefinanceCalculator),
+  () => import('@/components/ui/auto-loan-refinance-calculator').then(m => m.AutoLoanRefinanceCalculator),
   { ssr: false }
 );
-const TrustpilotMarquee = dynamic(() => import('../../components/TrustpilotMarquee'), { ssr: false });
+const TrustpilotMarquee = dynamic(() => import('@/components/TrustpilotMarquee'), { ssr: false });
 
 export default function Home() {
   const { ts } = useI18n();
   const prefersReducedMotion = useReducedMotion();
 
-  const fadeInUp = prefersReducedMotion
+  const fadeInUp = useMemo(() => prefersReducedMotion
     ? { initial: {}, animate: {}, transition: { duration: 0 } }
-    : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { type: "spring", stiffness: 260, damping: 20 } };
+    : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { type: "spring", stiffness: 260, damping: 20 } },
+  [prefersReducedMotion]);
 
-  const staggerChildren = prefersReducedMotion
+  const staggerChildren = useMemo(() => prefersReducedMotion
     ? { animate: {} }
-    : { animate: { transition: { staggerChildren: 0.05 } } };
+    : { animate: { transition: { staggerChildren: 0.05 } } },
+  [prefersReducedMotion]);
 
   const [activeService, setActiveService] = useState(0);
   const servicesSectionRef = useRef<HTMLElement>(null);
   const servicesInView = useInView(servicesSectionRef, { margin: '-25% 0px -25% 0px' });
 
-  const services = [
+  const services = useMemo(() => [
     {
       title: ts('home.services.autoRefinance.title'),
       description: ts('home.services.autoRefinance.description'),
       image: "/auto/hero-auto-refinance-v2.webp",
       href: "/services/auto-refinance",
       category: "Auto Refinance",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
+      icon: <MoneyIcon />,
     },
     {
       title: ts('home.services.vehicleCoverage.title'),
@@ -52,11 +53,7 @@ export default function Home() {
       image: "/auto/hero-vehicle-coverage-v2.webp",
       href: "/services/vehicle-coverage",
       category: "Coverage & Protection",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
+      icon: <ShieldIcon />,
     },
     {
       title: ts('home.services.homeRefinance.title'),
@@ -64,11 +61,7 @@ export default function Home() {
       image: "/auto/hero-home-refinance-v2.webp",
       href: "/services/home-refinance",
       category: "Home Loans",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
+      icon: <HomeIcon />,
     },
     {
       title: ts('home.services.insuranceConsultation.title'),
@@ -76,11 +69,7 @@ export default function Home() {
       image: "/auto/hero-auto-insurance-v2.webp",
       href: "/services/auto-insurance",
       category: "Auto Insurance",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      ),
+      icon: <ExchangeIcon />,
     },
     {
       title: ts('home.services.lifeInsurance.title'),
@@ -88,11 +77,7 @@ export default function Home() {
       image: "/auto/hero-life-insurance-v2.webp",
       href: "/services/life-insurance",
       category: "Life Insurance",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
+      icon: <HeartIcon />,
     },
     {
       title: ts('home.services.creditSavings.title'),
@@ -100,13 +85,9 @@ export default function Home() {
       image: "/auto/hero-credit-calculator-v2.webp",
       href: "/services/credit-consultations",
       category: "Credit & Savings",
-      icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
+      icon: <ChartIcon />,
     },
-  ];
+  ], [ts]);
 
   useEffect(() => {
     if (!servicesInView || prefersReducedMotion) return;
@@ -121,7 +102,7 @@ export default function Home() {
       <Navigation overlay />
 
       {/* ─── HERO ─── editorial, sharp, Rogo/Harvey aesthetic */}
-      <section className="relative min-h-[100svh] w-full flex flex-col justify-center overflow-hidden pt-32 pb-40">
+      <section className="relative min-h-[100svh] w-full flex flex-col overflow-hidden">
         {/* Background — static photo, layered scrims */}
         <div className="absolute inset-0 z-0 bg-slate-950 pointer-events-none">
           <Image
@@ -147,7 +128,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full pt-32 pb-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 8 }}
@@ -221,10 +202,14 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        <div className="mt-auto">
+          <CarBrandMarquee />
+        </div>
       </section>
 
-      {/* ─── CALCULATOR BODY ─── (Pulled over the hero section fold) */}
-      <section className="relative z-20 w-full max-w-7xl mx-auto px-4 -mt-[112px] md:-mt-[128px] pb-24">
+      {/* ─── CALCULATOR BODY ─── */}
+      <section className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-24">
         <motion.div
           variants={fadeInUp}
           initial="initial"
@@ -433,6 +418,15 @@ export default function Home() {
             >
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 mb-2">
                 Main office
+              </p>
+              <p className="text-sm text-slate-700 font-medium leading-relaxed">
+                North Michigan Business Center
+              </p>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                205 North Michigan Avenue, Suite 810
+              </p>
+              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                Chicago, IL 60601, US
               </p>
               <a
                 href="tel:+18883510782"
